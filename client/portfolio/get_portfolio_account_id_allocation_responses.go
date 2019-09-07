@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "learn2/models"
+	models "ibx/models"
 )
 
 // GetPortfolioAccountIDAllocationReader is a Reader for the GetPortfolioAccountIDAllocation structure.

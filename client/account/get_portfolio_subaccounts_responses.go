@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "learn2/models"
+	models "ibx/models"
 )
 
 // GetPortfolioSubaccountsReader is a Reader for the GetPortfolioSubaccounts structure.

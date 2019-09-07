@@ -15,7 +15,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "learn2/models"
+	models "ibx/models"
 )
 
 // GetPortfolioAccountIDSummaryReader is a Reader for the GetPortfolioAccountIDSummary structure.

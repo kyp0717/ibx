@@ -7,7 +7,9 @@ package account
 
 import (
 	"fmt"
+
 	"github.com/go-openapi/runtime"
+
 	strfmt "github.com/go-openapi/strfmt"
 )
 
@@ -16,7 +18,9 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
 	return &Client{transport: transport, formats: formats}
 }
 
-// Client for account API
+/*
+Client for account API
+*/
 type Client struct {
 	transport runtime.ClientTransport
 	formats   strfmt.Registry
@@ -24,9 +28,8 @@ type Client struct {
 
 /*
 GetIserverAccounts brokerages accounts
-Returns a list of accounts the user has trading access to,
-their respective aliases and the currently selected account.
-Note this endpoint must be called before modifying an order or querying open orders.
+
+Returns a list of accounts the user has trading access to, their respective aliases and the currently selected account. Note this endpoint must be called before modifying an order or querying open orders.
 */
 func (a *Client) GetIserverAccounts(params *GetIserverAccountsParams) (*GetIserverAccountsOK, error) {
 	// TODO: Validate the params before sending
@@ -62,8 +65,7 @@ func (a *Client) GetIserverAccounts(params *GetIserverAccountsParams) (*GetIserv
 /*
 GetPortfolioAccountIDLedger accounts ledger
 
-Information regarding settled cash, cash balances, etc. in
-the account's base currency and any other cash balances hold in other currencies.  /portfolio/accounts or /portfolio/subaccounts must be called prior to this endpoint. The list of supported currencies is available at https://www.interactivebrokers.com/en/index.php?f=3185.
+Information regarding settled cash, cash balances, etc. in the account's base currency and any other cash balances hold in other currencies.  /portfolio/accounts or /portfolio/subaccounts must be called prior to this endpoint. The list of supported currencies is available at https://www.interactivebrokers.com/en/index.php?f=3185.
 */
 func (a *Client) GetPortfolioAccountIDLedger(params *GetPortfolioAccountIDLedgerParams) (*GetPortfolioAccountIDLedgerOK, error) {
 	// TODO: Validate the params before sending
@@ -135,9 +137,7 @@ func (a *Client) GetPortfolioAccountIDMeta(params *GetPortfolioAccountIDMetaPara
 /*
 GetPortfolioAccountIDSummary accounts summary
 
-Returns information about margin, cash balances and other information
-related to specified account. See also /portfolio/{accountId}/ledger.
-/portfolio/accounts or /portfolio/subaccounts must be called prior to this endpoint.
+Returns information about margin, cash balances and other information related to specified account. See also /portfolio/{accountId}/ledger. /portfolio/accounts or /portfolio/subaccounts must be called prior to this endpoint.
 */
 func (a *Client) GetPortfolioAccountIDSummary(params *GetPortfolioAccountIDSummaryParams) (*GetPortfolioAccountIDSummaryOK, error) {
 	// TODO: Validate the params before sending

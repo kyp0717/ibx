@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "learn2/models"
+	models "ibx/models"
 )
 
 // NewPostIserverAccountAccountIDOrderParams creates a new PostIserverAccountAccountIDOrderParams object

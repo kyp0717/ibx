@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "learn2/models"
+	models "ibx/models"
 )
 
 // GetPortfolioAccountIDPositionsPageIDReader is a Reader for the GetPortfolioAccountIDPositionsPageID structure.

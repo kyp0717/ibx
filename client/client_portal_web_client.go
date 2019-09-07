@@ -11,18 +11,18 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"learn2/client/account"
-	"learn2/client/contract"
-	"learn2/client/f_y_i"
-	"learn2/client/i_b_cust"
-	"learn2/client/market_data"
-	"learn2/client/order"
-	"learn2/client/pn_l"
-	"learn2/client/portfolio"
-	"learn2/client/portfolio_analyst"
-	"learn2/client/scanner"
-	"learn2/client/session"
-	"learn2/client/trades"
+	"ibx/client/account"
+	"ibx/client/contract"
+	"ibx/client/f_y_i"
+	"ibx/client/i_b_cust"
+	"ibx/client/market_data"
+	"ibx/client/order"
+	"ibx/client/pn_l"
+	"ibx/client/portfolio"
+	"ibx/client/portfolio_analyst"
+	"ibx/client/scanner"
+	"ibx/client/session"
+	"ibx/client/trades"
 )
 
 // Default client portal web HTTP client.
@@ -67,18 +67,31 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *ClientPort
 
 	cli := new(ClientPortalWeb)
 	cli.Transport = transport
+
 	cli.Account = account.New(transport, formats)
+
 	cli.Contract = contract.New(transport, formats)
+
 	cli.Fyi = f_y_i.New(transport, formats)
+
 	cli.IbCust = i_b_cust.New(transport, formats)
+
 	cli.MarketData = market_data.New(transport, formats)
+
 	cli.Order = order.New(transport, formats)
+
 	cli.Pnl = pn_l.New(transport, formats)
+
 	cli.Portfolio = portfolio.New(transport, formats)
+
 	cli.PortfolioAnalyst = portfolio_analyst.New(transport, formats)
+
 	cli.Scanner = scanner.New(transport, formats)
+
 	cli.Session = session.New(transport, formats)
+
 	cli.Trades = trades.New(transport, formats)
+
 	return cli
 }
 
@@ -123,35 +136,59 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // ClientPortalWeb is a client for client portal web
 type ClientPortalWeb struct {
-	Account          *account.Client
-	Contract         *contract.Client
-	Fyi              *f_y_i.Client
-	IbCust           *i_b_cust.Client
-	MarketData       *market_data.Client
-	Order            *order.Client
-	Pnl              *pn_l.Client
-	Portfolio        *portfolio.Client
+	Account *account.Client
+
+	Contract *contract.Client
+
+	Fyi *f_y_i.Client
+
+	IbCust *i_b_cust.Client
+
+	MarketData *market_data.Client
+
+	Order *order.Client
+
+	Pnl *pn_l.Client
+
+	Portfolio *portfolio.Client
+
 	PortfolioAnalyst *portfolio_analyst.Client
-	Scanner          *scanner.Client
-	Session          *session.Client
-	Trades           *trades.Client
-	Transport        runtime.ClientTransport
+
+	Scanner *scanner.Client
+
+	Session *session.Client
+
+	Trades *trades.Client
+
+	Transport runtime.ClientTransport
 }
 
 // SetTransport changes the transport on the client and all its subresources
 func (c *ClientPortalWeb) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+
 	c.Account.SetTransport(transport)
+
 	c.Contract.SetTransport(transport)
+
 	c.Fyi.SetTransport(transport)
+
 	c.IbCust.SetTransport(transport)
+
 	c.MarketData.SetTransport(transport)
+
 	c.Order.SetTransport(transport)
+
 	c.Pnl.SetTransport(transport)
+
 	c.Portfolio.SetTransport(transport)
+
 	c.PortfolioAnalyst.SetTransport(transport)
+
 	c.Scanner.SetTransport(transport)
+
 	c.Session.SetTransport(transport)
+
 	c.Trades.SetTransport(transport)
 
 }
