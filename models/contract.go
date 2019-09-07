@@ -21,10 +21,8 @@ type Contract struct {
 
 	// company name
 	CompanyName string `json:"companyName,omitempty"`
-
 	// company name
-	CompanyName string `json:"company_name,omitempty"`
-
+	Company_Name string `json:"company_name,omitempty"`
 	// same as that in request
 	ConID string `json:"con_id,omitempty"`
 
