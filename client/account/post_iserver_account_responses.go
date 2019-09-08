@@ -15,16 +15,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// PostIserverAccountReader is a Reader for the PostIserverAccount structure.
-type PostIserverAccountReader struct {
+// PostAccountReader is a Reader for the PostAccount structure.
+type PostAccountReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverAccountReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostAccountReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverAccountOK()
+		result := NewPostAccountOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -35,30 +35,30 @@ func (o *PostIserverAccountReader) ReadResponse(response runtime.ClientResponse,
 	}
 }
 
-// NewPostIserverAccountOK creates a PostIserverAccountOK with default headers values
-func NewPostIserverAccountOK() *PostIserverAccountOK {
-	return &PostIserverAccountOK{}
+// NewPostAccountOK creates a PostAccountOK with default headers values
+func NewPostAccountOK() *PostAccountOK {
+	return &PostAccountOK{}
 }
 
-/*PostIserverAccountOK handles this case with default header values.
+/*PostAccountOK handles this case with default header values.
 
 an object containing updated account ID
 */
-type PostIserverAccountOK struct {
-	Payload *PostIserverAccountOKBody
+type PostAccountOK struct {
+	Payload *PostAccountOKBody
 }
 
-func (o *PostIserverAccountOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/account][%d] postIserverAccountOK  %+v", 200, o.Payload)
+func (o *PostAccountOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/account][%d] postAccountOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverAccountOK) GetPayload() *PostIserverAccountOKBody {
+func (o *PostAccountOK) GetPayload() *PostAccountOKBody {
 	return o.Payload
 }
 
-func (o *PostIserverAccountOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostAccountOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(PostIserverAccountOKBody)
+	o.Payload = new(PostAccountOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -68,10 +68,10 @@ func (o *PostIserverAccountOK) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*PostIserverAccountOKBody post iserver account o k body
-swagger:model PostIserverAccountOKBody
+/*PostAccountOKBody post iserver account o k body
+swagger:model PostAccountOKBody
 */
-type PostIserverAccountOKBody struct {
+type PostAccountOKBody struct {
 
 	// acct Id
 	AcctID string `json:"acctId,omitempty"`
@@ -81,12 +81,12 @@ type PostIserverAccountOKBody struct {
 }
 
 // Validate validates this post iserver account o k body
-func (o *PostIserverAccountOKBody) Validate(formats strfmt.Registry) error {
+func (o *PostAccountOKBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountOKBody) MarshalBinary() ([]byte, error) {
+func (o *PostAccountOKBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -94,8 +94,8 @@ func (o *PostIserverAccountOKBody) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountOKBody) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountOKBody
+func (o *PostAccountOKBody) UnmarshalBinary(b []byte) error {
+	var res PostAccountOKBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

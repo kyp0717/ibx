@@ -17,49 +17,49 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewGetIserverMarketdataHistoryParams creates a new GetIserverMarketdataHistoryParams object
+// NewGetMarketdataHistoryParams creates a new GetMarketdataHistoryParams object
 // with the default values initialized.
-func NewGetIserverMarketdataHistoryParams() *GetIserverMarketdataHistoryParams {
+func NewGetMarketdataHistoryParams() *GetMarketdataHistoryParams {
 	var ()
-	return &GetIserverMarketdataHistoryParams{
+	return &GetMarketdataHistoryParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewGetIserverMarketdataHistoryParamsWithTimeout creates a new GetIserverMarketdataHistoryParams object
+// NewGetMarketdataHistoryParamsWithTimeout creates a new GetMarketdataHistoryParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewGetIserverMarketdataHistoryParamsWithTimeout(timeout time.Duration) *GetIserverMarketdataHistoryParams {
+func NewGetMarketdataHistoryParamsWithTimeout(timeout time.Duration) *GetMarketdataHistoryParams {
 	var ()
-	return &GetIserverMarketdataHistoryParams{
+	return &GetMarketdataHistoryParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewGetIserverMarketdataHistoryParamsWithContext creates a new GetIserverMarketdataHistoryParams object
+// NewGetMarketdataHistoryParamsWithContext creates a new GetMarketdataHistoryParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewGetIserverMarketdataHistoryParamsWithContext(ctx context.Context) *GetIserverMarketdataHistoryParams {
+func NewGetMarketdataHistoryParamsWithContext(ctx context.Context) *GetMarketdataHistoryParams {
 	var ()
-	return &GetIserverMarketdataHistoryParams{
+	return &GetMarketdataHistoryParams{
 
 		Context: ctx,
 	}
 }
 
-// NewGetIserverMarketdataHistoryParamsWithHTTPClient creates a new GetIserverMarketdataHistoryParams object
+// NewGetMarketdataHistoryParamsWithHTTPClient creates a new GetMarketdataHistoryParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewGetIserverMarketdataHistoryParamsWithHTTPClient(client *http.Client) *GetIserverMarketdataHistoryParams {
+func NewGetMarketdataHistoryParamsWithHTTPClient(client *http.Client) *GetMarketdataHistoryParams {
 	var ()
-	return &GetIserverMarketdataHistoryParams{
+	return &GetMarketdataHistoryParams{
 		HTTPClient: client,
 	}
 }
 
-/*GetIserverMarketdataHistoryParams contains all the parameters to send to the API endpoint
+/*GetMarketdataHistoryParams contains all the parameters to send to the API endpoint
 for the get iserver marketdata history operation typically these are written to a http.Request
 */
-type GetIserverMarketdataHistoryParams struct {
+type GetMarketdataHistoryParams struct {
 
 	/*Bar
 	  possible value-- 5min,1h,1w
@@ -83,73 +83,73 @@ type GetIserverMarketdataHistoryParams struct {
 }
 
 // WithTimeout adds the timeout to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) WithTimeout(timeout time.Duration) *GetIserverMarketdataHistoryParams {
+func (o *GetMarketdataHistoryParams) WithTimeout(timeout time.Duration) *GetMarketdataHistoryParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) SetTimeout(timeout time.Duration) {
+func (o *GetMarketdataHistoryParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) WithContext(ctx context.Context) *GetIserverMarketdataHistoryParams {
+func (o *GetMarketdataHistoryParams) WithContext(ctx context.Context) *GetMarketdataHistoryParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) SetContext(ctx context.Context) {
+func (o *GetMarketdataHistoryParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) WithHTTPClient(client *http.Client) *GetIserverMarketdataHistoryParams {
+func (o *GetMarketdataHistoryParams) WithHTTPClient(client *http.Client) *GetMarketdataHistoryParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) SetHTTPClient(client *http.Client) {
+func (o *GetMarketdataHistoryParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithBar adds the bar to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) WithBar(bar *string) *GetIserverMarketdataHistoryParams {
+func (o *GetMarketdataHistoryParams) WithBar(bar *string) *GetMarketdataHistoryParams {
 	o.SetBar(bar)
 	return o
 }
 
 // SetBar adds the bar to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) SetBar(bar *string) {
+func (o *GetMarketdataHistoryParams) SetBar(bar *string) {
 	o.Bar = bar
 }
 
 // WithConid adds the conid to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) WithConid(conid string) *GetIserverMarketdataHistoryParams {
+func (o *GetMarketdataHistoryParams) WithConid(conid string) *GetMarketdataHistoryParams {
 	o.SetConid(conid)
 	return o
 }
 
 // SetConid adds the conid to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) SetConid(conid string) {
+func (o *GetMarketdataHistoryParams) SetConid(conid string) {
 	o.Conid = conid
 }
 
 // WithPeriod adds the period to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) WithPeriod(period string) *GetIserverMarketdataHistoryParams {
+func (o *GetMarketdataHistoryParams) WithPeriod(period string) *GetMarketdataHistoryParams {
 	o.SetPeriod(period)
 	return o
 }
 
 // SetPeriod adds the period to the get iserver marketdata history params
-func (o *GetIserverMarketdataHistoryParams) SetPeriod(period string) {
+func (o *GetMarketdataHistoryParams) SetPeriod(period string) {
 	o.Period = period
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *GetIserverMarketdataHistoryParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *GetMarketdataHistoryParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

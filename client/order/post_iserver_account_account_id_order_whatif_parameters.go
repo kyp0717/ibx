@@ -19,49 +19,49 @@ import (
 	models "ibx/models"
 )
 
-// NewPostIserverAccountAccountIDOrderWhatifParams creates a new PostIserverAccountAccountIDOrderWhatifParams object
+// NewPostAccountAccountIDOrderWhatifParams creates a new PostAccountAccountIDOrderWhatifParams object
 // with the default values initialized.
-func NewPostIserverAccountAccountIDOrderWhatifParams() *PostIserverAccountAccountIDOrderWhatifParams {
+func NewPostAccountAccountIDOrderWhatifParams() *PostAccountAccountIDOrderWhatifParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderWhatifParams{
+	return &PostAccountAccountIDOrderWhatifParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderWhatifParamsWithTimeout creates a new PostIserverAccountAccountIDOrderWhatifParams object
+// NewPostAccountAccountIDOrderWhatifParamsWithTimeout creates a new PostAccountAccountIDOrderWhatifParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewPostIserverAccountAccountIDOrderWhatifParamsWithTimeout(timeout time.Duration) *PostIserverAccountAccountIDOrderWhatifParams {
+func NewPostAccountAccountIDOrderWhatifParamsWithTimeout(timeout time.Duration) *PostAccountAccountIDOrderWhatifParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderWhatifParams{
+	return &PostAccountAccountIDOrderWhatifParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderWhatifParamsWithContext creates a new PostIserverAccountAccountIDOrderWhatifParams object
+// NewPostAccountAccountIDOrderWhatifParamsWithContext creates a new PostAccountAccountIDOrderWhatifParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewPostIserverAccountAccountIDOrderWhatifParamsWithContext(ctx context.Context) *PostIserverAccountAccountIDOrderWhatifParams {
+func NewPostAccountAccountIDOrderWhatifParamsWithContext(ctx context.Context) *PostAccountAccountIDOrderWhatifParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderWhatifParams{
+	return &PostAccountAccountIDOrderWhatifParams{
 
 		Context: ctx,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderWhatifParamsWithHTTPClient creates a new PostIserverAccountAccountIDOrderWhatifParams object
+// NewPostAccountAccountIDOrderWhatifParamsWithHTTPClient creates a new PostAccountAccountIDOrderWhatifParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewPostIserverAccountAccountIDOrderWhatifParamsWithHTTPClient(client *http.Client) *PostIserverAccountAccountIDOrderWhatifParams {
+func NewPostAccountAccountIDOrderWhatifParamsWithHTTPClient(client *http.Client) *PostAccountAccountIDOrderWhatifParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderWhatifParams{
+	return &PostAccountAccountIDOrderWhatifParams{
 		HTTPClient: client,
 	}
 }
 
-/*PostIserverAccountAccountIDOrderWhatifParams contains all the parameters to send to the API endpoint
+/*PostAccountAccountIDOrderWhatifParams contains all the parameters to send to the API endpoint
 for the post iserver account account ID order whatif operation typically these are written to a http.Request
 */
-type PostIserverAccountAccountIDOrderWhatifParams struct {
+type PostAccountAccountIDOrderWhatifParams struct {
 
 	/*AccountID
 	  account id
@@ -80,62 +80,62 @@ type PostIserverAccountAccountIDOrderWhatifParams struct {
 }
 
 // WithTimeout adds the timeout to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) WithTimeout(timeout time.Duration) *PostIserverAccountAccountIDOrderWhatifParams {
+func (o *PostAccountAccountIDOrderWhatifParams) WithTimeout(timeout time.Duration) *PostAccountAccountIDOrderWhatifParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) SetTimeout(timeout time.Duration) {
+func (o *PostAccountAccountIDOrderWhatifParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) WithContext(ctx context.Context) *PostIserverAccountAccountIDOrderWhatifParams {
+func (o *PostAccountAccountIDOrderWhatifParams) WithContext(ctx context.Context) *PostAccountAccountIDOrderWhatifParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) SetContext(ctx context.Context) {
+func (o *PostAccountAccountIDOrderWhatifParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) WithHTTPClient(client *http.Client) *PostIserverAccountAccountIDOrderWhatifParams {
+func (o *PostAccountAccountIDOrderWhatifParams) WithHTTPClient(client *http.Client) *PostAccountAccountIDOrderWhatifParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) SetHTTPClient(client *http.Client) {
+func (o *PostAccountAccountIDOrderWhatifParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithAccountID adds the accountID to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) WithAccountID(accountID string) *PostIserverAccountAccountIDOrderWhatifParams {
+func (o *PostAccountAccountIDOrderWhatifParams) WithAccountID(accountID string) *PostAccountAccountIDOrderWhatifParams {
 	o.SetAccountID(accountID)
 	return o
 }
 
 // SetAccountID adds the accountId to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) SetAccountID(accountID string) {
+func (o *PostAccountAccountIDOrderWhatifParams) SetAccountID(accountID string) {
 	o.AccountID = accountID
 }
 
 // WithBody adds the body to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) WithBody(body *models.OrderRequest) *PostIserverAccountAccountIDOrderWhatifParams {
+func (o *PostAccountAccountIDOrderWhatifParams) WithBody(body *models.OrderRequest) *PostAccountAccountIDOrderWhatifParams {
 	o.SetBody(body)
 	return o
 }
 
 // SetBody adds the body to the post iserver account account ID order whatif params
-func (o *PostIserverAccountAccountIDOrderWhatifParams) SetBody(body *models.OrderRequest) {
+func (o *PostAccountAccountIDOrderWhatifParams) SetBody(body *models.OrderRequest) {
 	o.Body = body
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *PostIserverAccountAccountIDOrderWhatifParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

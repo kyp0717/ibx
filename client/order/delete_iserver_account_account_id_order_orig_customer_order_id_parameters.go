@@ -17,49 +17,49 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams creates a new DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParams creates a new DeleteAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized.
-func NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams() *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParams() *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &DeleteAccountAccountIDOrderOrigCustomerOrderIDParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout creates a new DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout creates a new DeleteAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout(timeout time.Duration) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout(timeout time.Duration) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &DeleteAccountAccountIDOrderOrigCustomerOrderIDParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext creates a new DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext creates a new DeleteAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext(ctx context.Context) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext(ctx context.Context) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &DeleteAccountAccountIDOrderOrigCustomerOrderIDParams{
 
 		Context: ctx,
 	}
 }
 
-// NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient creates a new DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient creates a new DeleteAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient(client *http.Client) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient(client *http.Client) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &DeleteAccountAccountIDOrderOrigCustomerOrderIDParams{
 		HTTPClient: client,
 	}
 }
 
-/*DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams contains all the parameters to send to the API endpoint
+/*DeleteAccountAccountIDOrderOrigCustomerOrderIDParams contains all the parameters to send to the API endpoint
 for the delete iserver account account ID order orig customer order ID operation typically these are written to a http.Request
 */
-type DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams struct {
+type DeleteAccountAccountIDOrderOrigCustomerOrderIDParams struct {
 
 	/*AccountID
 	  account id
@@ -78,62 +78,62 @@ type DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams struct {
 }
 
 // WithTimeout adds the timeout to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithTimeout(timeout time.Duration) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) WithTimeout(timeout time.Duration) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetTimeout(timeout time.Duration) {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithContext(ctx context.Context) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) WithContext(ctx context.Context) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetContext(ctx context.Context) {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithHTTPClient(client *http.Client) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) WithHTTPClient(client *http.Client) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetHTTPClient(client *http.Client) {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithAccountID adds the accountID to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithAccountID(accountID string) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) WithAccountID(accountID string) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetAccountID(accountID)
 	return o
 }
 
 // SetAccountID adds the accountId to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetAccountID(accountID string) {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) SetAccountID(accountID string) {
 	o.AccountID = accountID
 }
 
 // WithOrigCustomerOrderID adds the origCustomerOrderID to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithOrigCustomerOrderID(origCustomerOrderID string) *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) WithOrigCustomerOrderID(origCustomerOrderID string) *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetOrigCustomerOrderID(origCustomerOrderID)
 	return o
 }
 
 // SetOrigCustomerOrderID adds the origCustomerOrderId to the delete iserver account account ID order orig customer order ID params
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetOrigCustomerOrderID(origCustomerOrderID string) {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) SetOrigCustomerOrderID(origCustomerOrderID string) {
 	o.OrigCustomerOrderID = origCustomerOrderID
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

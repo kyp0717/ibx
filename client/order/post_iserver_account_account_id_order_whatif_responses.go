@@ -16,16 +16,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// PostIserverAccountAccountIDOrderWhatifReader is a Reader for the PostIserverAccountAccountIDOrderWhatif structure.
-type PostIserverAccountAccountIDOrderWhatifReader struct {
+// PostAccountAccountIDOrderWhatifReader is a Reader for the PostAccountAccountIDOrderWhatif structure.
+type PostAccountAccountIDOrderWhatifReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverAccountAccountIDOrderWhatifReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostAccountAccountIDOrderWhatifReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverAccountAccountIDOrderWhatifOK()
+		result := NewPostAccountAccountIDOrderWhatifOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -36,30 +36,30 @@ func (o *PostIserverAccountAccountIDOrderWhatifReader) ReadResponse(response run
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderWhatifOK creates a PostIserverAccountAccountIDOrderWhatifOK with default headers values
-func NewPostIserverAccountAccountIDOrderWhatifOK() *PostIserverAccountAccountIDOrderWhatifOK {
-	return &PostIserverAccountAccountIDOrderWhatifOK{}
+// NewPostAccountAccountIDOrderWhatifOK creates a PostAccountAccountIDOrderWhatifOK with default headers values
+func NewPostAccountAccountIDOrderWhatifOK() *PostAccountAccountIDOrderWhatifOK {
+	return &PostAccountAccountIDOrderWhatifOK{}
 }
 
-/*PostIserverAccountAccountIDOrderWhatifOK handles this case with default header values.
+/*PostAccountAccountIDOrderWhatifOK handles this case with default header values.
 
 returns an object
 */
-type PostIserverAccountAccountIDOrderWhatifOK struct {
-	Payload *PostIserverAccountAccountIDOrderWhatifOKBody
+type PostAccountAccountIDOrderWhatifOK struct {
+	Payload *PostAccountAccountIDOrderWhatifOKBody
 }
 
-func (o *PostIserverAccountAccountIDOrderWhatifOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/account/{accountId}/order/whatif][%d] postIserverAccountAccountIdOrderWhatifOK  %+v", 200, o.Payload)
+func (o *PostAccountAccountIDOrderWhatifOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/account/{accountId}/order/whatif][%d] postAccountAccountIdOrderWhatifOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverAccountAccountIDOrderWhatifOK) GetPayload() *PostIserverAccountAccountIDOrderWhatifOKBody {
+func (o *PostAccountAccountIDOrderWhatifOK) GetPayload() *PostAccountAccountIDOrderWhatifOKBody {
 	return o.Payload
 }
 
-func (o *PostIserverAccountAccountIDOrderWhatifOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(PostIserverAccountAccountIDOrderWhatifOKBody)
+	o.Payload = new(PostAccountAccountIDOrderWhatifOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -69,32 +69,32 @@ func (o *PostIserverAccountAccountIDOrderWhatifOK) readResponse(response runtime
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrderWhatifOKBody post iserver account account ID order whatif o k body
-swagger:model PostIserverAccountAccountIDOrderWhatifOKBody
+/*PostAccountAccountIDOrderWhatifOKBody post iserver account account ID order whatif o k body
+swagger:model PostAccountAccountIDOrderWhatifOKBody
 */
-type PostIserverAccountAccountIDOrderWhatifOKBody struct {
+type PostAccountAccountIDOrderWhatifOKBody struct {
 
 	// amount
-	Amount *PostIserverAccountAccountIDOrderWhatifOKBodyAmount `json:"amount,omitempty"`
+	Amount *PostAccountAccountIDOrderWhatifOKBodyAmount `json:"amount,omitempty"`
 
 	// equity
-	Equity *PostIserverAccountAccountIDOrderWhatifOKBodyEquity `json:"equity,omitempty"`
+	Equity *PostAccountAccountIDOrderWhatifOKBodyEquity `json:"equity,omitempty"`
 
 	// error
 	Error string `json:"error,omitempty"`
 
 	// initial
-	Initial *PostIserverAccountAccountIDOrderWhatifOKBodyInitial `json:"initial,omitempty"`
+	Initial *PostAccountAccountIDOrderWhatifOKBodyInitial `json:"initial,omitempty"`
 
 	// maintenance
-	Maintenance *PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance `json:"maintenance,omitempty"`
+	Maintenance *PostAccountAccountIDOrderWhatifOKBodyMaintenance `json:"maintenance,omitempty"`
 
 	// warn
 	Warn string `json:"warn,omitempty"`
 }
 
 // Validate validates this post iserver account account ID order whatif o k body
-func (o *PostIserverAccountAccountIDOrderWhatifOKBody) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBody) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := o.validateAmount(formats); err != nil {
@@ -119,7 +119,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) Validate(formats strfmt.R
 	return nil
 }
 
-func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateAmount(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBody) validateAmount(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.Amount) { // not required
 		return nil
@@ -128,7 +128,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateAmount(formats st
 	if o.Amount != nil {
 		if err := o.Amount.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("postIserverAccountAccountIdOrderWhatifOK" + "." + "amount")
+				return ve.ValidateName("postAccountAccountIdOrderWhatifOK" + "." + "amount")
 			}
 			return err
 		}
@@ -137,7 +137,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateAmount(formats st
 	return nil
 }
 
-func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateEquity(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBody) validateEquity(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.Equity) { // not required
 		return nil
@@ -146,7 +146,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateEquity(formats st
 	if o.Equity != nil {
 		if err := o.Equity.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("postIserverAccountAccountIdOrderWhatifOK" + "." + "equity")
+				return ve.ValidateName("postAccountAccountIdOrderWhatifOK" + "." + "equity")
 			}
 			return err
 		}
@@ -155,7 +155,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateEquity(formats st
 	return nil
 }
 
-func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateInitial(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBody) validateInitial(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.Initial) { // not required
 		return nil
@@ -164,7 +164,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateInitial(formats s
 	if o.Initial != nil {
 		if err := o.Initial.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("postIserverAccountAccountIdOrderWhatifOK" + "." + "initial")
+				return ve.ValidateName("postAccountAccountIdOrderWhatifOK" + "." + "initial")
 			}
 			return err
 		}
@@ -173,7 +173,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateInitial(formats s
 	return nil
 }
 
-func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateMaintenance(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBody) validateMaintenance(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.Maintenance) { // not required
 		return nil
@@ -182,7 +182,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateMaintenance(forma
 	if o.Maintenance != nil {
 		if err := o.Maintenance.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("postIserverAccountAccountIdOrderWhatifOK" + "." + "maintenance")
+				return ve.ValidateName("postAccountAccountIdOrderWhatifOK" + "." + "maintenance")
 			}
 			return err
 		}
@@ -192,7 +192,7 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) validateMaintenance(forma
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBody) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrderWhatifOKBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -200,8 +200,8 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) MarshalBinary() ([]byte, 
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBody) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrderWhatifOKBody
+func (o *PostAccountAccountIDOrderWhatifOKBody) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrderWhatifOKBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -209,10 +209,10 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBody) UnmarshalBinary(b []byte)
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrderWhatifOKBodyAmount post iserver account account ID order whatif o k body amount
-swagger:model PostIserverAccountAccountIDOrderWhatifOKBodyAmount
+/*PostAccountAccountIDOrderWhatifOKBodyAmount post iserver account account ID order whatif o k body amount
+swagger:model PostAccountAccountIDOrderWhatifOKBodyAmount
 */
-type PostIserverAccountAccountIDOrderWhatifOKBodyAmount struct {
+type PostAccountAccountIDOrderWhatifOKBodyAmount struct {
 
 	// for example 23,000 USD
 	Amount string `json:"amount,omitempty"`
@@ -225,12 +225,12 @@ type PostIserverAccountAccountIDOrderWhatifOKBodyAmount struct {
 }
 
 // Validate validates this post iserver account account ID order whatif o k body amount
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyAmount) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBodyAmount) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyAmount) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrderWhatifOKBodyAmount) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -238,8 +238,8 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBodyAmount) MarshalBinary() ([]
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyAmount) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrderWhatifOKBodyAmount
+func (o *PostAccountAccountIDOrderWhatifOKBodyAmount) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrderWhatifOKBodyAmount
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -247,10 +247,10 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBodyAmount) UnmarshalBinary(b [
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrderWhatifOKBodyEquity post iserver account account ID order whatif o k body equity
-swagger:model PostIserverAccountAccountIDOrderWhatifOKBodyEquity
+/*PostAccountAccountIDOrderWhatifOKBodyEquity post iserver account account ID order whatif o k body equity
+swagger:model PostAccountAccountIDOrderWhatifOKBodyEquity
 */
-type PostIserverAccountAccountIDOrderWhatifOKBodyEquity struct {
+type PostAccountAccountIDOrderWhatifOKBodyEquity struct {
 
 	// after
 	After string `json:"after,omitempty"`
@@ -263,12 +263,12 @@ type PostIserverAccountAccountIDOrderWhatifOKBodyEquity struct {
 }
 
 // Validate validates this post iserver account account ID order whatif o k body equity
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyEquity) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBodyEquity) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyEquity) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrderWhatifOKBodyEquity) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -276,8 +276,8 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBodyEquity) MarshalBinary() ([]
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyEquity) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrderWhatifOKBodyEquity
+func (o *PostAccountAccountIDOrderWhatifOKBodyEquity) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrderWhatifOKBodyEquity
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -285,10 +285,10 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBodyEquity) UnmarshalBinary(b [
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrderWhatifOKBodyInitial post iserver account account ID order whatif o k body initial
-swagger:model PostIserverAccountAccountIDOrderWhatifOKBodyInitial
+/*PostAccountAccountIDOrderWhatifOKBodyInitial post iserver account account ID order whatif o k body initial
+swagger:model PostAccountAccountIDOrderWhatifOKBodyInitial
 */
-type PostIserverAccountAccountIDOrderWhatifOKBodyInitial struct {
+type PostAccountAccountIDOrderWhatifOKBodyInitial struct {
 
 	// after
 	After string `json:"after,omitempty"`
@@ -301,12 +301,12 @@ type PostIserverAccountAccountIDOrderWhatifOKBodyInitial struct {
 }
 
 // Validate validates this post iserver account account ID order whatif o k body initial
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyInitial) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBodyInitial) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyInitial) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrderWhatifOKBodyInitial) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -314,8 +314,8 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBodyInitial) MarshalBinary() ([
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyInitial) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrderWhatifOKBodyInitial
+func (o *PostAccountAccountIDOrderWhatifOKBodyInitial) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrderWhatifOKBodyInitial
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -323,10 +323,10 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBodyInitial) UnmarshalBinary(b 
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance post iserver account account ID order whatif o k body maintenance
-swagger:model PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance
+/*PostAccountAccountIDOrderWhatifOKBodyMaintenance post iserver account account ID order whatif o k body maintenance
+swagger:model PostAccountAccountIDOrderWhatifOKBodyMaintenance
 */
-type PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance struct {
+type PostAccountAccountIDOrderWhatifOKBodyMaintenance struct {
 
 	// after
 	After string `json:"after,omitempty"`
@@ -339,12 +339,12 @@ type PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance struct {
 }
 
 // Validate validates this post iserver account account ID order whatif o k body maintenance
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderWhatifOKBodyMaintenance) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrderWhatifOKBodyMaintenance) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -352,8 +352,8 @@ func (o *PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance) MarshalBinary(
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrderWhatifOKBodyMaintenance
+func (o *PostAccountAccountIDOrderWhatifOKBodyMaintenance) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrderWhatifOKBodyMaintenance
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -17,55 +17,55 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewPostIserverReplyReplyidParams creates a new PostIserverReplyReplyidParams object
+// NewPostReplyReplyidParams creates a new PostReplyReplyidParams object
 // with the default values initialized.
-func NewPostIserverReplyReplyidParams() *PostIserverReplyReplyidParams {
+func NewPostReplyReplyidParams() *PostReplyReplyidParams {
 	var ()
-	return &PostIserverReplyReplyidParams{
+	return &PostReplyReplyidParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewPostIserverReplyReplyidParamsWithTimeout creates a new PostIserverReplyReplyidParams object
+// NewPostReplyReplyidParamsWithTimeout creates a new PostReplyReplyidParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewPostIserverReplyReplyidParamsWithTimeout(timeout time.Duration) *PostIserverReplyReplyidParams {
+func NewPostReplyReplyidParamsWithTimeout(timeout time.Duration) *PostReplyReplyidParams {
 	var ()
-	return &PostIserverReplyReplyidParams{
+	return &PostReplyReplyidParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewPostIserverReplyReplyidParamsWithContext creates a new PostIserverReplyReplyidParams object
+// NewPostReplyReplyidParamsWithContext creates a new PostReplyReplyidParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewPostIserverReplyReplyidParamsWithContext(ctx context.Context) *PostIserverReplyReplyidParams {
+func NewPostReplyReplyidParamsWithContext(ctx context.Context) *PostReplyReplyidParams {
 	var ()
-	return &PostIserverReplyReplyidParams{
+	return &PostReplyReplyidParams{
 
 		Context: ctx,
 	}
 }
 
-// NewPostIserverReplyReplyidParamsWithHTTPClient creates a new PostIserverReplyReplyidParams object
+// NewPostReplyReplyidParamsWithHTTPClient creates a new PostReplyReplyidParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewPostIserverReplyReplyidParamsWithHTTPClient(client *http.Client) *PostIserverReplyReplyidParams {
+func NewPostReplyReplyidParamsWithHTTPClient(client *http.Client) *PostReplyReplyidParams {
 	var ()
-	return &PostIserverReplyReplyidParams{
+	return &PostReplyReplyidParams{
 		HTTPClient: client,
 	}
 }
 
-/*PostIserverReplyReplyidParams contains all the parameters to send to the API endpoint
+/*PostReplyReplyidParams contains all the parameters to send to the API endpoint
 for the post iserver reply replyid operation typically these are written to a http.Request
 */
-type PostIserverReplyReplyidParams struct {
+type PostReplyReplyidParams struct {
 
 	/*Body
 	  Answer to question
 
 	*/
-	Body PostIserverReplyReplyidBody
+	Body PostReplyReplyidBody
 	/*Replyid
 	  Please use the "id" from the response of "Place Order" end-point
 
@@ -78,62 +78,62 @@ type PostIserverReplyReplyidParams struct {
 }
 
 // WithTimeout adds the timeout to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) WithTimeout(timeout time.Duration) *PostIserverReplyReplyidParams {
+func (o *PostReplyReplyidParams) WithTimeout(timeout time.Duration) *PostReplyReplyidParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) SetTimeout(timeout time.Duration) {
+func (o *PostReplyReplyidParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) WithContext(ctx context.Context) *PostIserverReplyReplyidParams {
+func (o *PostReplyReplyidParams) WithContext(ctx context.Context) *PostReplyReplyidParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) SetContext(ctx context.Context) {
+func (o *PostReplyReplyidParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) WithHTTPClient(client *http.Client) *PostIserverReplyReplyidParams {
+func (o *PostReplyReplyidParams) WithHTTPClient(client *http.Client) *PostReplyReplyidParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) SetHTTPClient(client *http.Client) {
+func (o *PostReplyReplyidParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithBody adds the body to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) WithBody(body PostIserverReplyReplyidBody) *PostIserverReplyReplyidParams {
+func (o *PostReplyReplyidParams) WithBody(body PostReplyReplyidBody) *PostReplyReplyidParams {
 	o.SetBody(body)
 	return o
 }
 
 // SetBody adds the body to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) SetBody(body PostIserverReplyReplyidBody) {
+func (o *PostReplyReplyidParams) SetBody(body PostReplyReplyidBody) {
 	o.Body = body
 }
 
 // WithReplyid adds the replyid to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) WithReplyid(replyid string) *PostIserverReplyReplyidParams {
+func (o *PostReplyReplyidParams) WithReplyid(replyid string) *PostReplyReplyidParams {
 	o.SetReplyid(replyid)
 	return o
 }
 
 // SetReplyid adds the replyid to the post iserver reply replyid params
-func (o *PostIserverReplyReplyidParams) SetReplyid(replyid string) {
+func (o *PostReplyReplyidParams) SetReplyid(replyid string) {
 	o.Replyid = replyid
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *PostIserverReplyReplyidParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *PostReplyReplyidParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

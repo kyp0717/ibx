@@ -19,16 +19,16 @@ import (
 	models "ibx/models"
 )
 
-// GetIserverAccountOrdersReader is a Reader for the GetIserverAccountOrders structure.
-type GetIserverAccountOrdersReader struct {
+// GetAccountOrdersReader is a Reader for the GetAccountOrders structure.
+type GetAccountOrdersReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverAccountOrdersReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetAccountOrdersReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverAccountOrdersOK()
+		result := NewGetAccountOrdersOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -39,30 +39,30 @@ func (o *GetIserverAccountOrdersReader) ReadResponse(response runtime.ClientResp
 	}
 }
 
-// NewGetIserverAccountOrdersOK creates a GetIserverAccountOrdersOK with default headers values
-func NewGetIserverAccountOrdersOK() *GetIserverAccountOrdersOK {
-	return &GetIserverAccountOrdersOK{}
+// NewGetAccountOrdersOK creates a GetAccountOrdersOK with default headers values
+func NewGetAccountOrdersOK() *GetAccountOrdersOK {
+	return &GetAccountOrdersOK{}
 }
 
-/*GetIserverAccountOrdersOK handles this case with default header values.
+/*GetAccountOrdersOK handles this case with default header values.
 
 An object contains two arrays
 */
-type GetIserverAccountOrdersOK struct {
-	Payload *GetIserverAccountOrdersOKBody
+type GetAccountOrdersOK struct {
+	Payload *GetAccountOrdersOKBody
 }
 
-func (o *GetIserverAccountOrdersOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/account/orders][%d] getIserverAccountOrdersOK  %+v", 200, o.Payload)
+func (o *GetAccountOrdersOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/account/orders][%d] getAccountOrdersOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverAccountOrdersOK) GetPayload() *GetIserverAccountOrdersOKBody {
+func (o *GetAccountOrdersOK) GetPayload() *GetAccountOrdersOKBody {
 	return o.Payload
 }
 
-func (o *GetIserverAccountOrdersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetAccountOrdersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(GetIserverAccountOrdersOKBody)
+	o.Payload = new(GetAccountOrdersOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -72,10 +72,10 @@ func (o *GetIserverAccountOrdersOK) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-/*GetIserverAccountOrdersOKBody get iserver account orders o k body
-swagger:model GetIserverAccountOrdersOKBody
+/*GetAccountOrdersOKBody get iserver account orders o k body
+swagger:model GetAccountOrdersOKBody
 */
-type GetIserverAccountOrdersOKBody struct {
+type GetAccountOrdersOKBody struct {
 
 	// notifications
 	Notifications []interface{} `json:"notifications"`
@@ -85,7 +85,7 @@ type GetIserverAccountOrdersOKBody struct {
 }
 
 // Validate validates this get iserver account orders o k body
-func (o *GetIserverAccountOrdersOKBody) Validate(formats strfmt.Registry) error {
+func (o *GetAccountOrdersOKBody) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := o.validateOrders(formats); err != nil {
@@ -98,7 +98,7 @@ func (o *GetIserverAccountOrdersOKBody) Validate(formats strfmt.Registry) error 
 	return nil
 }
 
-func (o *GetIserverAccountOrdersOKBody) validateOrders(formats strfmt.Registry) error {
+func (o *GetAccountOrdersOKBody) validateOrders(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.Orders) { // not required
 		return nil
@@ -112,7 +112,7 @@ func (o *GetIserverAccountOrdersOKBody) validateOrders(formats strfmt.Registry) 
 		if o.Orders[i] != nil {
 			if err := o.Orders[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("getIserverAccountOrdersOK" + "." + "orders" + "." + strconv.Itoa(i))
+					return ve.ValidateName("getAccountOrdersOK" + "." + "orders" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -124,7 +124,7 @@ func (o *GetIserverAccountOrdersOKBody) validateOrders(formats strfmt.Registry) 
 }
 
 // MarshalBinary interface implementation
-func (o *GetIserverAccountOrdersOKBody) MarshalBinary() ([]byte, error) {
+func (o *GetAccountOrdersOKBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -132,8 +132,8 @@ func (o *GetIserverAccountOrdersOKBody) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *GetIserverAccountOrdersOKBody) UnmarshalBinary(b []byte) error {
-	var res GetIserverAccountOrdersOKBody
+func (o *GetAccountOrdersOKBody) UnmarshalBinary(b []byte) error {
+	var res GetAccountOrdersOKBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -7,32 +7,30 @@ package contract
 
 import (
 	"fmt"
-	"io"
-
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
+	strfmt "github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"io"
 )
 
-// PostIserverSecdefSearchReader is a Reader for the PostIserverSecdefSearch structure.
-type PostIserverSecdefSearchReader struct {
+// PostSecdefSearchReader is a Reader for the PostSecdefSearch structure.
+type PostSecdefSearchReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverSecdefSearchReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostSecdefSearchReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverSecdefSearchOK()
+		result := NewPostSecdefSearchOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
 		return result, nil
 	case 500:
-		result := NewPostIserverSecdefSearchInternalServerError()
+		result := NewPostSecdefSearchInternalServerError()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -43,28 +41,28 @@ func (o *PostIserverSecdefSearchReader) ReadResponse(response runtime.ClientResp
 	}
 }
 
-// NewPostIserverSecdefSearchOK creates a PostIserverSecdefSearchOK with default headers values
-func NewPostIserverSecdefSearchOK() *PostIserverSecdefSearchOK {
-	return &PostIserverSecdefSearchOK{}
+// NewPostSecdefSearchOK creates a PostSecdefSearchOK with default headers values
+func NewPostSecdefSearchOK() *PostSecdefSearchOK {
+	return &PostSecdefSearchOK{}
 }
 
-/*PostIserverSecdefSearchOK handles this case with default header values.
+/*PostSecdefSearchOK handles this case with default header values.
 
 returns an array of results
 */
-type PostIserverSecdefSearchOK struct {
-	Payload []*PostIserverSecdefSearchOKBodyItems0
+type PostSecdefSearchOK struct {
+	Payload []*PostSecdefSearchOKBodyItems0
 }
 
-func (o *PostIserverSecdefSearchOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/secdef/search][%d] postIserverSecdefSearchOK  %+v", 200, o.Payload)
+func (o *PostSecdefSearchOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/secdef/search][%d] postSecdefSearchOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverSecdefSearchOK) GetPayload() []*PostIserverSecdefSearchOKBodyItems0 {
+func (o *PostSecdefSearchOK) GetPayload() []*PostSecdefSearchOKBodyItems0 {
 	return o.Payload
 }
 
-func (o *PostIserverSecdefSearchOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostSecdefSearchOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -74,30 +72,31 @@ func (o *PostIserverSecdefSearchOK) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-// NewPostIserverSecdefSearchInternalServerError creates a PostIserverSecdefSearchInternalServerError with default headers values
-func NewPostIserverSecdefSearchInternalServerError() *PostIserverSecdefSearchInternalServerError {
-	return &PostIserverSecdefSearchInternalServerError{}
+// NewPostSecdefSearchInternalServerError creates a
+// PostSecdefSearchInternalServerError with default headers values
+func NewPostSecdefSearchInternalServerError() *PostSecdefSearchInternalServerError {
+	return &PostSecdefSearchInternalServerError{}
 }
 
-/*PostIserverSecdefSearchInternalServerError handles this case with default header values.
-
+/*
+PostSecdefSearchInternalServerError handles this case with default header values.
 error while processing the request
 */
-type PostIserverSecdefSearchInternalServerError struct {
-	Payload *PostIserverSecdefSearchInternalServerErrorBody
+type PostSecdefSearchInternalServerError struct {
+	Payload *PostSecdefSearchInternalServerErrorBody
 }
 
-func (o *PostIserverSecdefSearchInternalServerError) Error() string {
-	return fmt.Sprintf("[POST /iserver/secdef/search][%d] postIserverSecdefSearchInternalServerError  %+v", 500, o.Payload)
+func (o *PostSecdefSearchInternalServerError) Error() string {
+	return fmt.Sprintf("[POST /iserver/secdef/search][%d] postSecdefSearchInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *PostIserverSecdefSearchInternalServerError) GetPayload() *PostIserverSecdefSearchInternalServerErrorBody {
+func (o *PostSecdefSearchInternalServerError) GetPayload() *PostSecdefSearchInternalServerErrorBody {
 	return o.Payload
 }
 
-func (o *PostIserverSecdefSearchInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostSecdefSearchInternalServerError) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(PostIserverSecdefSearchInternalServerErrorBody)
+	o.Payload = new(PostSecdefSearchInternalServerErrorBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -107,24 +106,21 @@ func (o *PostIserverSecdefSearchInternalServerError) readResponse(response runti
 	return nil
 }
 
-/*PostIserverSecdefSearchBody post iserver secdef search body
-swagger:model PostIserverSecdefSearchBody
+/*PostSecdefSearchBody post iserver secdef search body
+swagger:model PostSecdefSearchBody
 */
-type PostIserverSecdefSearchBody struct {
-
+type PostSecdefSearchBody struct {
 	// should be true if the search is to be performed by name. false by default.
 	Name bool `json:"name,omitempty"`
-
 	// If search is done by name, only the assets provided in this field will be returned. Currently, only STK is supported.
 	SecType string `json:"secType,omitempty"`
-
 	// symbol or name to be searched
 	// Required: true
 	Symbol *string `json:"symbol"`
 }
 
 // Validate validates this post iserver secdef search body
-func (o *PostIserverSecdefSearchBody) Validate(formats strfmt.Registry) error {
+func (o *PostSecdefSearchBody) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := o.validateSymbol(formats); err != nil {
@@ -137,7 +133,7 @@ func (o *PostIserverSecdefSearchBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (o *PostIserverSecdefSearchBody) validateSymbol(formats strfmt.Registry) error {
+func (o *PostSecdefSearchBody) validateSymbol(formats strfmt.Registry) error {
 
 	if err := validate.Required("symbol"+"."+"symbol", "body", o.Symbol); err != nil {
 		return err
@@ -147,7 +143,7 @@ func (o *PostIserverSecdefSearchBody) validateSymbol(formats strfmt.Registry) er
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverSecdefSearchBody) MarshalBinary() ([]byte, error) {
+func (o *PostSecdefSearchBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -155,8 +151,8 @@ func (o *PostIserverSecdefSearchBody) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverSecdefSearchBody) UnmarshalBinary(b []byte) error {
-	var res PostIserverSecdefSearchBody
+func (o *PostSecdefSearchBody) UnmarshalBinary(b []byte) error {
+	var res PostSecdefSearchBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -164,22 +160,21 @@ func (o *PostIserverSecdefSearchBody) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-/*PostIserverSecdefSearchInternalServerErrorBody post iserver secdef search internal server error body
-swagger:model PostIserverSecdefSearchInternalServerErrorBody
+/*PostSecdefSearchInternalServerErrorBody post iserver secdef search internal server error body
+swagger:model PostSecdefSearchInternalServerErrorBody
 */
-type PostIserverSecdefSearchInternalServerErrorBody struct {
-
+type PostSecdefSearchInternalServerErrorBody struct {
 	// error
 	Error string `json:"error,omitempty"`
 }
 
 // Validate validates this post iserver secdef search internal server error body
-func (o *PostIserverSecdefSearchInternalServerErrorBody) Validate(formats strfmt.Registry) error {
+func (o *PostSecdefSearchInternalServerErrorBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverSecdefSearchInternalServerErrorBody) MarshalBinary() ([]byte, error) {
+func (o *PostSecdefSearchInternalServerErrorBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -187,8 +182,8 @@ func (o *PostIserverSecdefSearchInternalServerErrorBody) MarshalBinary() ([]byte
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverSecdefSearchInternalServerErrorBody) UnmarshalBinary(b []byte) error {
-	var res PostIserverSecdefSearchInternalServerErrorBody
+func (o *PostSecdefSearchInternalServerErrorBody) UnmarshalBinary(b []byte) error {
+	var res PostSecdefSearchInternalServerErrorBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -196,43 +191,35 @@ func (o *PostIserverSecdefSearchInternalServerErrorBody) UnmarshalBinary(b []byt
 	return nil
 }
 
-/*PostIserverSecdefSearchOKBodyItems0 post iserver secdef search o k body items0
-swagger:model PostIserverSecdefSearchOKBodyItems0
+/*PostSecdefSearchOKBodyItems0 post iserver secdef search o k body items0
+swagger:model PostSecdefSearchOKBodyItems0
 */
-type PostIserverSecdefSearchOKBodyItems0 struct {
-
+type PostSecdefSearchOKBodyItems0 struct {
 	// company header
 	CompanyHeader string `json:"companyHeader,omitempty"`
-
 	// company name
 	CompanyName string `json:"companyName,omitempty"`
-
 	// conid
 	Conid int64 `json:"conid,omitempty"`
-
 	// description
 	Description string `json:"description,omitempty"`
-
 	// opt
 	Opt string `json:"opt,omitempty"`
-
 	// sections
 	Sections []interface{} `json:"sections"`
-
 	// symbol
 	Symbol string `json:"symbol,omitempty"`
-
 	// war
 	War string `json:"war,omitempty"`
 }
 
 // Validate validates this post iserver secdef search o k body items0
-func (o *PostIserverSecdefSearchOKBodyItems0) Validate(formats strfmt.Registry) error {
+func (o *PostSecdefSearchOKBodyItems0) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverSecdefSearchOKBodyItems0) MarshalBinary() ([]byte, error) {
+func (o *PostSecdefSearchOKBodyItems0) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -240,8 +227,8 @@ func (o *PostIserverSecdefSearchOKBodyItems0) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverSecdefSearchOKBodyItems0) UnmarshalBinary(b []byte) error {
-	var res PostIserverSecdefSearchOKBodyItems0
+func (o *PostSecdefSearchOKBodyItems0) UnmarshalBinary(b []byte) error {
+	var res PostSecdefSearchOKBodyItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

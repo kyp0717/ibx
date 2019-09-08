@@ -16,16 +16,16 @@ import (
 	models "ibx/models"
 )
 
-// PostIserverAuthStatusReader is a Reader for the PostIserverAuthStatus structure.
-type PostIserverAuthStatusReader struct {
+// PostAuthStatusReader is a Reader for the PostAuthStatus structure.
+type PostAuthStatusReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverAuthStatusReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostAuthStatusReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverAuthStatusOK()
+		result := NewPostAuthStatusOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -36,28 +36,28 @@ func (o *PostIserverAuthStatusReader) ReadResponse(response runtime.ClientRespon
 	}
 }
 
-// NewPostIserverAuthStatusOK creates a PostIserverAuthStatusOK with default headers values
-func NewPostIserverAuthStatusOK() *PostIserverAuthStatusOK {
-	return &PostIserverAuthStatusOK{}
+// NewPostAuthStatusOK creates a PostAuthStatusOK with default headers values
+func NewPostAuthStatusOK() *PostAuthStatusOK {
+	return &PostAuthStatusOK{}
 }
 
-/*PostIserverAuthStatusOK handles this case with default header values.
+/*PostAuthStatusOK handles this case with default header values.
 
 Authentication Status
 */
-type PostIserverAuthStatusOK struct {
+type PostAuthStatusOK struct {
 	Payload *models.AuthStatus
 }
 
-func (o *PostIserverAuthStatusOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/auth/status][%d] postIserverAuthStatusOK  %+v", 200, o.Payload)
+func (o *PostAuthStatusOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/auth/status][%d] postAuthStatusOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverAuthStatusOK) GetPayload() *models.AuthStatus {
+func (o *PostAuthStatusOK) GetPayload() *models.AuthStatus {
 	return o.Payload
 }
 
-func (o *PostIserverAuthStatusOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostAuthStatusOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.AuthStatus)
 

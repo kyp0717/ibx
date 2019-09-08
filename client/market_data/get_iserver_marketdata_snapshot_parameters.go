@@ -18,49 +18,49 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewGetIserverMarketdataSnapshotParams creates a new GetIserverMarketdataSnapshotParams object
+// NewGetMarketdataSnapshotParams creates a new GetMarketdataSnapshotParams object
 // with the default values initialized.
-func NewGetIserverMarketdataSnapshotParams() *GetIserverMarketdataSnapshotParams {
+func NewGetMarketdataSnapshotParams() *GetMarketdataSnapshotParams {
 	var ()
-	return &GetIserverMarketdataSnapshotParams{
+	return &GetMarketdataSnapshotParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewGetIserverMarketdataSnapshotParamsWithTimeout creates a new GetIserverMarketdataSnapshotParams object
+// NewGetMarketdataSnapshotParamsWithTimeout creates a new GetMarketdataSnapshotParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewGetIserverMarketdataSnapshotParamsWithTimeout(timeout time.Duration) *GetIserverMarketdataSnapshotParams {
+func NewGetMarketdataSnapshotParamsWithTimeout(timeout time.Duration) *GetMarketdataSnapshotParams {
 	var ()
-	return &GetIserverMarketdataSnapshotParams{
+	return &GetMarketdataSnapshotParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewGetIserverMarketdataSnapshotParamsWithContext creates a new GetIserverMarketdataSnapshotParams object
+// NewGetMarketdataSnapshotParamsWithContext creates a new GetMarketdataSnapshotParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewGetIserverMarketdataSnapshotParamsWithContext(ctx context.Context) *GetIserverMarketdataSnapshotParams {
+func NewGetMarketdataSnapshotParamsWithContext(ctx context.Context) *GetMarketdataSnapshotParams {
 	var ()
-	return &GetIserverMarketdataSnapshotParams{
+	return &GetMarketdataSnapshotParams{
 
 		Context: ctx,
 	}
 }
 
-// NewGetIserverMarketdataSnapshotParamsWithHTTPClient creates a new GetIserverMarketdataSnapshotParams object
+// NewGetMarketdataSnapshotParamsWithHTTPClient creates a new GetMarketdataSnapshotParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewGetIserverMarketdataSnapshotParamsWithHTTPClient(client *http.Client) *GetIserverMarketdataSnapshotParams {
+func NewGetMarketdataSnapshotParamsWithHTTPClient(client *http.Client) *GetMarketdataSnapshotParams {
 	var ()
-	return &GetIserverMarketdataSnapshotParams{
+	return &GetMarketdataSnapshotParams{
 		HTTPClient: client,
 	}
 }
 
-/*GetIserverMarketdataSnapshotParams contains all the parameters to send to the API endpoint
+/*GetMarketdataSnapshotParams contains all the parameters to send to the API endpoint
 for the get iserver marketdata snapshot operation typically these are written to a http.Request
 */
-type GetIserverMarketdataSnapshotParams struct {
+type GetMarketdataSnapshotParams struct {
 
 	/*Conids
 	  list of conids separated by comma
@@ -84,73 +84,73 @@ type GetIserverMarketdataSnapshotParams struct {
 }
 
 // WithTimeout adds the timeout to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) WithTimeout(timeout time.Duration) *GetIserverMarketdataSnapshotParams {
+func (o *GetMarketdataSnapshotParams) WithTimeout(timeout time.Duration) *GetMarketdataSnapshotParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) SetTimeout(timeout time.Duration) {
+func (o *GetMarketdataSnapshotParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) WithContext(ctx context.Context) *GetIserverMarketdataSnapshotParams {
+func (o *GetMarketdataSnapshotParams) WithContext(ctx context.Context) *GetMarketdataSnapshotParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) SetContext(ctx context.Context) {
+func (o *GetMarketdataSnapshotParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) WithHTTPClient(client *http.Client) *GetIserverMarketdataSnapshotParams {
+func (o *GetMarketdataSnapshotParams) WithHTTPClient(client *http.Client) *GetMarketdataSnapshotParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) SetHTTPClient(client *http.Client) {
+func (o *GetMarketdataSnapshotParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithConids adds the conids to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) WithConids(conids string) *GetIserverMarketdataSnapshotParams {
+func (o *GetMarketdataSnapshotParams) WithConids(conids string) *GetMarketdataSnapshotParams {
 	o.SetConids(conids)
 	return o
 }
 
 // SetConids adds the conids to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) SetConids(conids string) {
+func (o *GetMarketdataSnapshotParams) SetConids(conids string) {
 	o.Conids = conids
 }
 
 // WithFields adds the fields to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) WithFields(fields *string) *GetIserverMarketdataSnapshotParams {
+func (o *GetMarketdataSnapshotParams) WithFields(fields *string) *GetMarketdataSnapshotParams {
 	o.SetFields(fields)
 	return o
 }
 
 // SetFields adds the fields to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) SetFields(fields *string) {
+func (o *GetMarketdataSnapshotParams) SetFields(fields *string) {
 	o.Fields = fields
 }
 
 // WithSince adds the since to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) WithSince(since *int64) *GetIserverMarketdataSnapshotParams {
+func (o *GetMarketdataSnapshotParams) WithSince(since *int64) *GetMarketdataSnapshotParams {
 	o.SetSince(since)
 	return o
 }
 
 // SetSince adds the since to the get iserver marketdata snapshot params
-func (o *GetIserverMarketdataSnapshotParams) SetSince(since *int64) {
+func (o *GetMarketdataSnapshotParams) SetSince(since *int64) {
 	o.Since = since
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *GetIserverMarketdataSnapshotParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *GetMarketdataSnapshotParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

@@ -27,72 +27,72 @@ type Client struct {
 }
 
 /*
-GetIserverScannerParams gets lists of available scanners
+GetScannerParams gets lists of available scanners
 
 Returns an object contains four lists contain all parameters for scanners
 */
-func (a *Client) GetIserverScannerParams(params *GetIserverScannerParamsParams) (*GetIserverScannerParamsOK, error) {
+func (a *Client) GetScannerParams(params *GetScannerParamsParams) (*GetScannerParamsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetIserverScannerParamsParams()
+		params = NewGetScannerParamsParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "GetIserverScannerParams",
+		ID:                 "GetScannerParams",
 		Method:             "GET",
 		PathPattern:        "/iserver/scanner/params",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetIserverScannerParamsReader{formats: a.formats},
+		Reader:             &GetScannerParamsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetIserverScannerParamsOK)
+	success, ok := result.(*GetScannerParamsOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIserverScannerParams: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for GetScannerParams: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-PostIserverScannerRun runs scanner to get a list of contracts
+PostScannerRun runs scanner to get a list of contracts
 */
-func (a *Client) PostIserverScannerRun(params *PostIserverScannerRunParams) (*PostIserverScannerRunOK, error) {
+func (a *Client) PostScannerRun(params *PostScannerRunParams) (*PostScannerRunOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverScannerRunParams()
+		params = NewPostScannerRunParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverScannerRun",
+		ID:                 "PostScannerRun",
 		Method:             "POST",
 		PathPattern:        "/iserver/scanner/run",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverScannerRunReader{formats: a.formats},
+		Reader:             &PostScannerRunReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverScannerRunOK)
+	success, ok := result.(*PostScannerRunOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverScannerRun: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostScannerRun: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

@@ -27,43 +27,43 @@ type Client struct {
 }
 
 /*
-GetIserverMarketdataHistory markets data history
+GetMarketdataHistory markets data history
 
 Get history of market Data for the given conid, length of data is controlled by period and bar. e.g. 1y period with bar =1w returns 52 data points
 */
-func (a *Client) GetIserverMarketdataHistory(params *GetIserverMarketdataHistoryParams) (*GetIserverMarketdataHistoryOK, error) {
+func (a *Client) GetMarketdataHistory(params *GetMarketdataHistoryParams) (*GetMarketdataHistoryOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetIserverMarketdataHistoryParams()
+		params = NewGetMarketdataHistoryParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "GetIserverMarketdataHistory",
+		ID:                 "GetMarketdataHistory",
 		Method:             "GET",
 		PathPattern:        "/iserver/marketdata/history",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetIserverMarketdataHistoryReader{formats: a.formats},
+		Reader:             &GetMarketdataHistoryReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetIserverMarketdataHistoryOK)
+	success, ok := result.(*GetMarketdataHistoryOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIserverMarketdataHistory: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for GetMarketdataHistory: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-GetIserverMarketdataSnapshot markets data
+GetMarketdataSnapshot markets data
 
 Get Market Data for the given conid(s). The end-point will return by default bid, ask, last, change, change pct, close, listing exchange.
 See response fields for a list of available fields that can be request via fields argument.
@@ -71,34 +71,34 @@ The endpoint /iserver/accounts should be called prior to /iserver/marketdata/sna
 To receive all available fields the /snapshot endpoint will need to be called several times.
 
 */
-func (a *Client) GetIserverMarketdataSnapshot(params *GetIserverMarketdataSnapshotParams) (*GetIserverMarketdataSnapshotOK, error) {
+func (a *Client) GetMarketdataSnapshot(params *GetMarketdataSnapshotParams) (*GetMarketdataSnapshotOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetIserverMarketdataSnapshotParams()
+		params = NewGetMarketdataSnapshotParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "GetIserverMarketdataSnapshot",
+		ID:                 "GetMarketdataSnapshot",
 		Method:             "GET",
 		PathPattern:        "/iserver/marketdata/snapshot",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetIserverMarketdataSnapshotReader{formats: a.formats},
+		Reader:             &GetMarketdataSnapshotReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetIserverMarketdataSnapshotOK)
+	success, ok := result.(*GetMarketdataSnapshotOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIserverMarketdataSnapshot: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for GetMarketdataSnapshot: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

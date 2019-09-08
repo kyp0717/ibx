@@ -7,9 +7,7 @@ package session
 
 import (
 	"fmt"
-
 	"github.com/go-openapi/runtime"
-
 	strfmt "github.com/go-openapi/strfmt"
 )
 
@@ -28,7 +26,6 @@ type Client struct {
 
 /*
 GetSsoValidate validates s s o
-
 Validates the current session for the SSO user
 */
 func (a *Client) GetSsoValidate(params *GetSsoValidateParams) (*GetSsoValidateOK, error) {
@@ -63,81 +60,81 @@ func (a *Client) GetSsoValidate(params *GetSsoValidateParams) (*GetSsoValidateOK
 }
 
 /*
-PostIserverAuthStatus authentications status
-
-Current Authentication status to the Brokerage system. Market Data and Trading is not possible if not authenticated, e.g. authenticated shows false
+PostAuthStatus authentications status
+Current Authentication status to the Brokerage system.
+Market Data and Trading is not possible if not authenticated, e.g. authenticated shows false
 */
-func (a *Client) PostIserverAuthStatus(params *PostIserverAuthStatusParams) (*PostIserverAuthStatusOK, error) {
+func (a *Client) PostAuthStatus(params *PostAuthStatusParams) (*PostAuthStatusOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverAuthStatusParams()
+		params = NewPostAuthStatusParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverAuthStatus",
+		ID:                 "PostAuthStatus",
 		Method:             "POST",
 		PathPattern:        "/iserver/auth/status",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverAuthStatusReader{formats: a.formats},
+		Reader:             &PostAuthStatusReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverAuthStatusOK)
+	success, ok := result.(*PostAuthStatusOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverAuthStatus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostAuthStatus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-PostIserverReauthenticate tries to re authenticate to brokerage
-
-Provides a way to reauthenticate to the Brokerage system as long as there is a valid SSO session, see /sso/validate.
+PostReauthenticate tries to re authenticate to brokerage
+Provides a way to reauthenticate to the Brokerage system as
+long as there is a valid SSO session, see /sso/validate.
 */
-func (a *Client) PostIserverReauthenticate(params *PostIserverReauthenticateParams) (*PostIserverReauthenticateOK, error) {
+func (a *Client) PostReauthenticate(params *PostReauthenticateParams) (*PostReauthenticateOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverReauthenticateParams()
+		params = NewPostReauthenticateParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverReauthenticate",
+		ID:                 "PostReauthenticate",
 		Method:             "POST",
 		PathPattern:        "/iserver/reauthenticate",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverReauthenticateReader{formats: a.formats},
+		Reader:             &PostReauthenticateReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverReauthenticateOK)
+	success, ok := result.(*PostReauthenticateOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverReauthenticate: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostReauthenticate: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
 PostLogout ends the current session
-
-Logs the user out of the gateway session. Any further activity requires re-authentication.
+Logs the user out of the gateway session.
+Any further activity requires re-authentication.
 */
 func (a *Client) PostLogout(params *PostLogoutParams) (*PostLogoutOK, error) {
 	// TODO: Validate the params before sending

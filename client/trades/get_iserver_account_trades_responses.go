@@ -16,16 +16,16 @@ import (
 	models "ibx/models"
 )
 
-// GetIserverAccountTradesReader is a Reader for the GetIserverAccountTrades structure.
-type GetIserverAccountTradesReader struct {
+// GetAccountTradesReader is a Reader for the GetAccountTrades structure.
+type GetAccountTradesReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverAccountTradesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetAccountTradesReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverAccountTradesOK()
+		result := NewGetAccountTradesOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -36,28 +36,28 @@ func (o *GetIserverAccountTradesReader) ReadResponse(response runtime.ClientResp
 	}
 }
 
-// NewGetIserverAccountTradesOK creates a GetIserverAccountTradesOK with default headers values
-func NewGetIserverAccountTradesOK() *GetIserverAccountTradesOK {
-	return &GetIserverAccountTradesOK{}
+// NewGetAccountTradesOK creates a GetAccountTradesOK with default headers values
+func NewGetAccountTradesOK() *GetAccountTradesOK {
+	return &GetAccountTradesOK{}
 }
 
-/*GetIserverAccountTradesOK handles this case with default header values.
+/*GetAccountTradesOK handles this case with default header values.
 
 An array of trades
 */
-type GetIserverAccountTradesOK struct {
+type GetAccountTradesOK struct {
 	Payload []*models.Trade
 }
 
-func (o *GetIserverAccountTradesOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/account/trades][%d] getIserverAccountTradesOK  %+v", 200, o.Payload)
+func (o *GetAccountTradesOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/account/trades][%d] getAccountTradesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverAccountTradesOK) GetPayload() []*models.Trade {
+func (o *GetAccountTradesOK) GetPayload() []*models.Trade {
 	return o.Payload
 }
 
-func (o *GetIserverAccountTradesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetAccountTradesOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {

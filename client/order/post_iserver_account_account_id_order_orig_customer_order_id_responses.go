@@ -15,16 +15,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// PostIserverAccountAccountIDOrderOrigCustomerOrderIDReader is a Reader for the PostIserverAccountAccountIDOrderOrigCustomerOrderID structure.
-type PostIserverAccountAccountIDOrderOrigCustomerOrderIDReader struct {
+// PostAccountAccountIDOrderOrigCustomerOrderIDReader is a Reader for the PostAccountAccountIDOrderOrigCustomerOrderID structure.
+type PostAccountAccountIDOrderOrigCustomerOrderIDReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDOK()
+		result := NewPostAccountAccountIDOrderOrigCustomerOrderIDOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -35,28 +35,28 @@ func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDReader) ReadResponse
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDOK creates a PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK with default headers values
-func NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDOK() *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK {
-	return &PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK{}
+// NewPostAccountAccountIDOrderOrigCustomerOrderIDOK creates a PostAccountAccountIDOrderOrigCustomerOrderIDOK with default headers values
+func NewPostAccountAccountIDOrderOrigCustomerOrderIDOK() *PostAccountAccountIDOrderOrigCustomerOrderIDOK {
+	return &PostAccountAccountIDOrderOrigCustomerOrderIDOK{}
 }
 
-/*PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK handles this case with default header values.
+/*PostAccountAccountIDOrderOrigCustomerOrderIDOK handles this case with default header values.
 
 returns an array
 */
-type PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK struct {
-	Payload []*PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
+type PostAccountAccountIDOrderOrigCustomerOrderIDOK struct {
+	Payload []*PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
 }
 
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/account/{accountId}/order/{origCustomerOrderId}][%d] postIserverAccountAccountIdOrderOrigCustomerOrderIdOK  %+v", 200, o.Payload)
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/account/{accountId}/order/{origCustomerOrderId}][%d] postAccountAccountIdOrderOrigCustomerOrderIdOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK) GetPayload() []*PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDOK) GetPayload() []*PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 {
 	return o.Payload
 }
 
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -66,10 +66,10 @@ func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK) readResponse(res
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 post iserver account account ID order orig customer order ID o k body items0
-swagger:model PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
+/*PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 post iserver account account ID order orig customer order ID o k body items0
+swagger:model PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
 */
-type PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 struct {
+type PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 struct {
 
 	// local order id
 	LocalOrderID string `json:"local_order_id,omitempty"`
@@ -82,12 +82,12 @@ type PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 struct {
 }
 
 // Validate validates this post iserver account account ID order orig customer order ID o k body items0
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -95,8 +95,8 @@ func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) Marsha
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

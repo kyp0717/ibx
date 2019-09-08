@@ -19,49 +19,49 @@ import (
 	models "ibx/models"
 )
 
-// NewPostIserverAccountParams creates a new PostIserverAccountParams object
+// NewPostAccountParams creates a new PostAccountParams object
 // with the default values initialized.
-func NewPostIserverAccountParams() *PostIserverAccountParams {
+func NewPostAccountParams() *PostAccountParams {
 	var ()
-	return &PostIserverAccountParams{
+	return &PostAccountParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewPostIserverAccountParamsWithTimeout creates a new PostIserverAccountParams object
+// NewPostAccountParamsWithTimeout creates a new PostAccountParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewPostIserverAccountParamsWithTimeout(timeout time.Duration) *PostIserverAccountParams {
+func NewPostAccountParamsWithTimeout(timeout time.Duration) *PostAccountParams {
 	var ()
-	return &PostIserverAccountParams{
+	return &PostAccountParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewPostIserverAccountParamsWithContext creates a new PostIserverAccountParams object
+// NewPostAccountParamsWithContext creates a new PostAccountParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewPostIserverAccountParamsWithContext(ctx context.Context) *PostIserverAccountParams {
+func NewPostAccountParamsWithContext(ctx context.Context) *PostAccountParams {
 	var ()
-	return &PostIserverAccountParams{
+	return &PostAccountParams{
 
 		Context: ctx,
 	}
 }
 
-// NewPostIserverAccountParamsWithHTTPClient creates a new PostIserverAccountParams object
+// NewPostAccountParamsWithHTTPClient creates a new PostAccountParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewPostIserverAccountParamsWithHTTPClient(client *http.Client) *PostIserverAccountParams {
+func NewPostAccountParamsWithHTTPClient(client *http.Client) *PostAccountParams {
 	var ()
-	return &PostIserverAccountParams{
+	return &PostAccountParams{
 		HTTPClient: client,
 	}
 }
 
-/*PostIserverAccountParams contains all the parameters to send to the API endpoint
+/*PostAccountParams contains all the parameters to send to the API endpoint
 for the post iserver account operation typically these are written to a http.Request
 */
-type PostIserverAccountParams struct {
+type PostAccountParams struct {
 
 	/*Body
 	  account id
@@ -75,51 +75,51 @@ type PostIserverAccountParams struct {
 }
 
 // WithTimeout adds the timeout to the post iserver account params
-func (o *PostIserverAccountParams) WithTimeout(timeout time.Duration) *PostIserverAccountParams {
+func (o *PostAccountParams) WithTimeout(timeout time.Duration) *PostAccountParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the post iserver account params
-func (o *PostIserverAccountParams) SetTimeout(timeout time.Duration) {
+func (o *PostAccountParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the post iserver account params
-func (o *PostIserverAccountParams) WithContext(ctx context.Context) *PostIserverAccountParams {
+func (o *PostAccountParams) WithContext(ctx context.Context) *PostAccountParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the post iserver account params
-func (o *PostIserverAccountParams) SetContext(ctx context.Context) {
+func (o *PostAccountParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the post iserver account params
-func (o *PostIserverAccountParams) WithHTTPClient(client *http.Client) *PostIserverAccountParams {
+func (o *PostAccountParams) WithHTTPClient(client *http.Client) *PostAccountParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the post iserver account params
-func (o *PostIserverAccountParams) SetHTTPClient(client *http.Client) {
+func (o *PostAccountParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithBody adds the body to the post iserver account params
-func (o *PostIserverAccountParams) WithBody(body *models.SetAccount) *PostIserverAccountParams {
+func (o *PostAccountParams) WithBody(body *models.SetAccount) *PostAccountParams {
 	o.SetBody(body)
 	return o
 }
 
 // SetBody adds the body to the post iserver account params
-func (o *PostIserverAccountParams) SetBody(body *models.SetAccount) {
+func (o *PostAccountParams) SetBody(body *models.SetAccount) {
 	o.Body = body
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *PostIserverAccountParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *PostAccountParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

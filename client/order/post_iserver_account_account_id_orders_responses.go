@@ -19,16 +19,16 @@ import (
 	models "ibx/models"
 )
 
-// PostIserverAccountAccountIDOrdersReader is a Reader for the PostIserverAccountAccountIDOrders structure.
-type PostIserverAccountAccountIDOrdersReader struct {
+// PostAccountAccountIDOrdersReader is a Reader for the PostAccountAccountIDOrders structure.
+type PostAccountAccountIDOrdersReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverAccountAccountIDOrdersReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostAccountAccountIDOrdersReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverAccountAccountIDOrdersOK()
+		result := NewPostAccountAccountIDOrdersOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -39,28 +39,28 @@ func (o *PostIserverAccountAccountIDOrdersReader) ReadResponse(response runtime.
 	}
 }
 
-// NewPostIserverAccountAccountIDOrdersOK creates a PostIserverAccountAccountIDOrdersOK with default headers values
-func NewPostIserverAccountAccountIDOrdersOK() *PostIserverAccountAccountIDOrdersOK {
-	return &PostIserverAccountAccountIDOrdersOK{}
+// NewPostAccountAccountIDOrdersOK creates a PostAccountAccountIDOrdersOK with default headers values
+func NewPostAccountAccountIDOrdersOK() *PostAccountAccountIDOrdersOK {
+	return &PostAccountAccountIDOrdersOK{}
 }
 
-/*PostIserverAccountAccountIDOrdersOK handles this case with default header values.
+/*PostAccountAccountIDOrdersOK handles this case with default header values.
 
 returns an array
 */
-type PostIserverAccountAccountIDOrdersOK struct {
-	Payload []*PostIserverAccountAccountIDOrdersOKBodyItems0
+type PostAccountAccountIDOrdersOK struct {
+	Payload []*PostAccountAccountIDOrdersOKBodyItems0
 }
 
-func (o *PostIserverAccountAccountIDOrdersOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/account/{accountId}/orders][%d] postIserverAccountAccountIdOrdersOK  %+v", 200, o.Payload)
+func (o *PostAccountAccountIDOrdersOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/account/{accountId}/orders][%d] postAccountAccountIdOrdersOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverAccountAccountIDOrdersOK) GetPayload() []*PostIserverAccountAccountIDOrdersOKBodyItems0 {
+func (o *PostAccountAccountIDOrdersOK) GetPayload() []*PostAccountAccountIDOrdersOKBodyItems0 {
 	return o.Payload
 }
 
-func (o *PostIserverAccountAccountIDOrdersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrdersOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -70,10 +70,10 @@ func (o *PostIserverAccountAccountIDOrdersOK) readResponse(response runtime.Clie
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrdersBody post iserver account account ID orders body
-swagger:model PostIserverAccountAccountIDOrdersBody
+/*PostAccountAccountIDOrdersBody post iserver account account ID orders body
+swagger:model PostAccountAccountIDOrdersBody
 */
-type PostIserverAccountAccountIDOrdersBody struct {
+type PostAccountAccountIDOrdersBody struct {
 
 	// Notes for bracket orders: 1. Children orders will not have its own "cOID", so please donot pass "cOID"
 	// parameter in child order.Instead, they will have a "parentId" which must be equal to "cOID" of parent.
@@ -84,7 +84,7 @@ type PostIserverAccountAccountIDOrdersBody struct {
 }
 
 // Validate validates this post iserver account account ID orders body
-func (o *PostIserverAccountAccountIDOrdersBody) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrdersBody) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := o.validateOrders(formats); err != nil {
@@ -97,7 +97,7 @@ func (o *PostIserverAccountAccountIDOrdersBody) Validate(formats strfmt.Registry
 	return nil
 }
 
-func (o *PostIserverAccountAccountIDOrdersBody) validateOrders(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrdersBody) validateOrders(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.Orders) { // not required
 		return nil
@@ -123,7 +123,7 @@ func (o *PostIserverAccountAccountIDOrdersBody) validateOrders(formats strfmt.Re
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrdersBody) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrdersBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -131,8 +131,8 @@ func (o *PostIserverAccountAccountIDOrdersBody) MarshalBinary() ([]byte, error) 
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrdersBody) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrdersBody
+func (o *PostAccountAccountIDOrdersBody) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrdersBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -140,10 +140,10 @@ func (o *PostIserverAccountAccountIDOrdersBody) UnmarshalBinary(b []byte) error 
 	return nil
 }
 
-/*PostIserverAccountAccountIDOrdersOKBodyItems0 post iserver account account ID orders o k body items0
-swagger:model PostIserverAccountAccountIDOrdersOKBodyItems0
+/*PostAccountAccountIDOrdersOKBodyItems0 post iserver account account ID orders o k body items0
+swagger:model PostAccountAccountIDOrdersOKBodyItems0
 */
-type PostIserverAccountAccountIDOrdersOKBodyItems0 struct {
+type PostAccountAccountIDOrdersOKBodyItems0 struct {
 
 	// id
 	ID string `json:"id,omitempty"`
@@ -155,12 +155,12 @@ type PostIserverAccountAccountIDOrdersOKBodyItems0 struct {
 }
 
 // Validate validates this post iserver account account ID orders o k body items0
-func (o *PostIserverAccountAccountIDOrdersOKBodyItems0) Validate(formats strfmt.Registry) error {
+func (o *PostAccountAccountIDOrdersOKBodyItems0) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrdersOKBodyItems0) MarshalBinary() ([]byte, error) {
+func (o *PostAccountAccountIDOrdersOKBodyItems0) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -168,8 +168,8 @@ func (o *PostIserverAccountAccountIDOrdersOKBodyItems0) MarshalBinary() ([]byte,
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverAccountAccountIDOrdersOKBodyItems0) UnmarshalBinary(b []byte) error {
-	var res PostIserverAccountAccountIDOrdersOKBodyItems0
+func (o *PostAccountAccountIDOrdersOKBodyItems0) UnmarshalBinary(b []byte) error {
+	var res PostAccountAccountIDOrdersOKBodyItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

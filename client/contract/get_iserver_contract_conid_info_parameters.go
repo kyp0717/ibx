@@ -17,49 +17,49 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewGetIserverContractConidInfoParams creates a new GetIserverContractConidInfoParams object
+// NewGetContractConidInfoParams creates a new GetContractConidInfoParams object
 // with the default values initialized.
-func NewGetIserverContractConidInfoParams() *GetIserverContractConidInfoParams {
+func NewGetContractConidInfoParams() *GetContractConidInfoParams {
 	var ()
-	return &GetIserverContractConidInfoParams{
+	return &GetContractConidInfoParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewGetIserverContractConidInfoParamsWithTimeout creates a new GetIserverContractConidInfoParams object
+// NewGetContractConidInfoParamsWithTimeout creates a new GetContractConidInfoParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewGetIserverContractConidInfoParamsWithTimeout(timeout time.Duration) *GetIserverContractConidInfoParams {
+func NewGetContractConidInfoParamsWithTimeout(timeout time.Duration) *GetContractConidInfoParams {
 	var ()
-	return &GetIserverContractConidInfoParams{
+	return &GetContractConidInfoParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewGetIserverContractConidInfoParamsWithContext creates a new GetIserverContractConidInfoParams object
+// NewGetContractConidInfoParamsWithContext creates a new GetContractConidInfoParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewGetIserverContractConidInfoParamsWithContext(ctx context.Context) *GetIserverContractConidInfoParams {
+func NewGetContractConidInfoParamsWithContext(ctx context.Context) *GetContractConidInfoParams {
 	var ()
-	return &GetIserverContractConidInfoParams{
+	return &GetContractConidInfoParams{
 
 		Context: ctx,
 	}
 }
 
-// NewGetIserverContractConidInfoParamsWithHTTPClient creates a new GetIserverContractConidInfoParams object
+// NewGetContractConidInfoParamsWithHTTPClient creates a new GetContractConidInfoParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewGetIserverContractConidInfoParamsWithHTTPClient(client *http.Client) *GetIserverContractConidInfoParams {
+func NewGetContractConidInfoParamsWithHTTPClient(client *http.Client) *GetContractConidInfoParams {
 	var ()
-	return &GetIserverContractConidInfoParams{
+	return &GetContractConidInfoParams{
 		HTTPClient: client,
 	}
 }
 
-/*GetIserverContractConidInfoParams contains all the parameters to send to the API endpoint
+/*GetContractConidInfoParams contains all the parameters to send to the API endpoint
 for the get iserver contract conid info operation typically these are written to a http.Request
 */
-type GetIserverContractConidInfoParams struct {
+type GetContractConidInfoParams struct {
 
 	/*Conid
 	  contract id
@@ -73,51 +73,51 @@ type GetIserverContractConidInfoParams struct {
 }
 
 // WithTimeout adds the timeout to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) WithTimeout(timeout time.Duration) *GetIserverContractConidInfoParams {
+func (o *GetContractConidInfoParams) WithTimeout(timeout time.Duration) *GetContractConidInfoParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) SetTimeout(timeout time.Duration) {
+func (o *GetContractConidInfoParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) WithContext(ctx context.Context) *GetIserverContractConidInfoParams {
+func (o *GetContractConidInfoParams) WithContext(ctx context.Context) *GetContractConidInfoParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) SetContext(ctx context.Context) {
+func (o *GetContractConidInfoParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) WithHTTPClient(client *http.Client) *GetIserverContractConidInfoParams {
+func (o *GetContractConidInfoParams) WithHTTPClient(client *http.Client) *GetContractConidInfoParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) SetHTTPClient(client *http.Client) {
+func (o *GetContractConidInfoParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithConid adds the conid to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) WithConid(conid string) *GetIserverContractConidInfoParams {
+func (o *GetContractConidInfoParams) WithConid(conid string) *GetContractConidInfoParams {
 	o.SetConid(conid)
 	return o
 }
 
 // SetConid adds the conid to the get iserver contract conid info params
-func (o *GetIserverContractConidInfoParams) SetConid(conid string) {
+func (o *GetContractConidInfoParams) SetConid(conid string) {
 	o.Conid = conid
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *GetIserverContractConidInfoParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *GetContractConidInfoParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

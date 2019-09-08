@@ -15,16 +15,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// GetIserverAccountPnlPartitionedReader is a Reader for the GetIserverAccountPnlPartitioned structure.
-type GetIserverAccountPnlPartitionedReader struct {
+// GetAccountPnlPartitionedReader is a Reader for the GetAccountPnlPartitioned structure.
+type GetAccountPnlPartitionedReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverAccountPnlPartitionedReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetAccountPnlPartitionedReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverAccountPnlPartitionedOK()
+		result := NewGetAccountPnlPartitionedOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -35,30 +35,30 @@ func (o *GetIserverAccountPnlPartitionedReader) ReadResponse(response runtime.Cl
 	}
 }
 
-// NewGetIserverAccountPnlPartitionedOK creates a GetIserverAccountPnlPartitionedOK with default headers values
-func NewGetIserverAccountPnlPartitionedOK() *GetIserverAccountPnlPartitionedOK {
-	return &GetIserverAccountPnlPartitionedOK{}
+// NewGetAccountPnlPartitionedOK creates a GetAccountPnlPartitionedOK with default headers values
+func NewGetAccountPnlPartitionedOK() *GetAccountPnlPartitionedOK {
+	return &GetAccountPnlPartitionedOK{}
 }
 
-/*GetIserverAccountPnlPartitionedOK handles this case with default header values.
+/*GetAccountPnlPartitionedOK handles this case with default header values.
 
 An object containing account and model(s) pnl
 */
-type GetIserverAccountPnlPartitionedOK struct {
-	Payload *GetIserverAccountPnlPartitionedOKBody
+type GetAccountPnlPartitionedOK struct {
+	Payload *GetAccountPnlPartitionedOKBody
 }
 
-func (o *GetIserverAccountPnlPartitionedOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/account/pnl/partitioned][%d] getIserverAccountPnlPartitionedOK  %+v", 200, o.Payload)
+func (o *GetAccountPnlPartitionedOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/account/pnl/partitioned][%d] getAccountPnlPartitionedOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverAccountPnlPartitionedOK) GetPayload() *GetIserverAccountPnlPartitionedOKBody {
+func (o *GetAccountPnlPartitionedOK) GetPayload() *GetAccountPnlPartitionedOKBody {
 	return o.Payload
 }
 
-func (o *GetIserverAccountPnlPartitionedOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetAccountPnlPartitionedOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(GetIserverAccountPnlPartitionedOKBody)
+	o.Payload = new(GetAccountPnlPartitionedOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -68,22 +68,22 @@ func (o *GetIserverAccountPnlPartitionedOK) readResponse(response runtime.Client
 	return nil
 }
 
-/*GetIserverAccountPnlPartitionedOKBody get iserver account pnl partitioned o k body
-swagger:model GetIserverAccountPnlPartitionedOKBody
+/*GetAccountPnlPartitionedOKBody get iserver account pnl partitioned o k body
+swagger:model GetAccountPnlPartitionedOKBody
 */
-type GetIserverAccountPnlPartitionedOKBody struct {
+type GetAccountPnlPartitionedOKBody struct {
 
 	// acct Id
 	AcctID interface{} `json:"acctId,omitempty"`
 }
 
 // Validate validates this get iserver account pnl partitioned o k body
-func (o *GetIserverAccountPnlPartitionedOKBody) Validate(formats strfmt.Registry) error {
+func (o *GetAccountPnlPartitionedOKBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *GetIserverAccountPnlPartitionedOKBody) MarshalBinary() ([]byte, error) {
+func (o *GetAccountPnlPartitionedOKBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -91,8 +91,8 @@ func (o *GetIserverAccountPnlPartitionedOKBody) MarshalBinary() ([]byte, error) 
 }
 
 // UnmarshalBinary interface implementation
-func (o *GetIserverAccountPnlPartitionedOKBody) UnmarshalBinary(b []byte) error {
-	var res GetIserverAccountPnlPartitionedOKBody
+func (o *GetAccountPnlPartitionedOKBody) UnmarshalBinary(b []byte) error {
+	var res GetAccountPnlPartitionedOKBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

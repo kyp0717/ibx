@@ -16,16 +16,16 @@ import (
 	models "ibx/models"
 )
 
-// GetIserverMarketdataHistoryReader is a Reader for the GetIserverMarketdataHistory structure.
-type GetIserverMarketdataHistoryReader struct {
+// GetMarketdataHistoryReader is a Reader for the GetMarketdataHistory structure.
+type GetMarketdataHistoryReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverMarketdataHistoryReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetMarketdataHistoryReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverMarketdataHistoryOK()
+		result := NewGetMarketdataHistoryOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -36,28 +36,28 @@ func (o *GetIserverMarketdataHistoryReader) ReadResponse(response runtime.Client
 	}
 }
 
-// NewGetIserverMarketdataHistoryOK creates a GetIserverMarketdataHistoryOK with default headers values
-func NewGetIserverMarketdataHistoryOK() *GetIserverMarketdataHistoryOK {
-	return &GetIserverMarketdataHistoryOK{}
+// NewGetMarketdataHistoryOK creates a GetMarketdataHistoryOK with default headers values
+func NewGetMarketdataHistoryOK() *GetMarketdataHistoryOK {
+	return &GetMarketdataHistoryOK{}
 }
 
-/*GetIserverMarketdataHistoryOK handles this case with default header values.
+/*GetMarketdataHistoryOK handles this case with default header values.
 
 Returns an object
 */
-type GetIserverMarketdataHistoryOK struct {
+type GetMarketdataHistoryOK struct {
 	Payload *models.HistoryData
 }
 
-func (o *GetIserverMarketdataHistoryOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/marketdata/history][%d] getIserverMarketdataHistoryOK  %+v", 200, o.Payload)
+func (o *GetMarketdataHistoryOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/marketdata/history][%d] getMarketdataHistoryOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverMarketdataHistoryOK) GetPayload() *models.HistoryData {
+func (o *GetMarketdataHistoryOK) GetPayload() *models.HistoryData {
 	return o.Payload
 }
 
-func (o *GetIserverMarketdataHistoryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetMarketdataHistoryOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.HistoryData)
 

@@ -15,22 +15,22 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// PostIserverReplyReplyidReader is a Reader for the PostIserverReplyReplyid structure.
-type PostIserverReplyReplyidReader struct {
+// PostReplyReplyidReader is a Reader for the PostReplyReplyid structure.
+type PostReplyReplyidReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverReplyReplyidReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostReplyReplyidReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverReplyReplyidOK()
+		result := NewPostReplyReplyidOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
 		return result, nil
 	case 400:
-		result := NewPostIserverReplyReplyidBadRequest()
+		result := NewPostReplyReplyidBadRequest()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -41,28 +41,28 @@ func (o *PostIserverReplyReplyidReader) ReadResponse(response runtime.ClientResp
 	}
 }
 
-// NewPostIserverReplyReplyidOK creates a PostIserverReplyReplyidOK with default headers values
-func NewPostIserverReplyReplyidOK() *PostIserverReplyReplyidOK {
-	return &PostIserverReplyReplyidOK{}
+// NewPostReplyReplyidOK creates a PostReplyReplyidOK with default headers values
+func NewPostReplyReplyidOK() *PostReplyReplyidOK {
+	return &PostReplyReplyidOK{}
 }
 
-/*PostIserverReplyReplyidOK handles this case with default header values.
+/*PostReplyReplyidOK handles this case with default header values.
 
 Order is submitted successfully, returns an array contains one object
 */
-type PostIserverReplyReplyidOK struct {
-	Payload []*PostIserverReplyReplyidOKBodyItems0
+type PostReplyReplyidOK struct {
+	Payload []*PostReplyReplyidOKBodyItems0
 }
 
-func (o *PostIserverReplyReplyidOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/reply/{replyid}][%d] postIserverReplyReplyidOK  %+v", 200, o.Payload)
+func (o *PostReplyReplyidOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/reply/{replyid}][%d] postReplyReplyidOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverReplyReplyidOK) GetPayload() []*PostIserverReplyReplyidOKBodyItems0 {
+func (o *PostReplyReplyidOK) GetPayload() []*PostReplyReplyidOKBodyItems0 {
 	return o.Payload
 }
 
-func (o *PostIserverReplyReplyidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostReplyReplyidOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -72,30 +72,30 @@ func (o *PostIserverReplyReplyidOK) readResponse(response runtime.ClientResponse
 	return nil
 }
 
-// NewPostIserverReplyReplyidBadRequest creates a PostIserverReplyReplyidBadRequest with default headers values
-func NewPostIserverReplyReplyidBadRequest() *PostIserverReplyReplyidBadRequest {
-	return &PostIserverReplyReplyidBadRequest{}
+// NewPostReplyReplyidBadRequest creates a PostReplyReplyidBadRequest with default headers values
+func NewPostReplyReplyidBadRequest() *PostReplyReplyidBadRequest {
+	return &PostReplyReplyidBadRequest{}
 }
 
-/*PostIserverReplyReplyidBadRequest handles this case with default header values.
+/*PostReplyReplyidBadRequest handles this case with default header values.
 
 When you send "confirmed-false" in the request, you will receive this
 */
-type PostIserverReplyReplyidBadRequest struct {
-	Payload *PostIserverReplyReplyidBadRequestBody
+type PostReplyReplyidBadRequest struct {
+	Payload *PostReplyReplyidBadRequestBody
 }
 
-func (o *PostIserverReplyReplyidBadRequest) Error() string {
-	return fmt.Sprintf("[POST /iserver/reply/{replyid}][%d] postIserverReplyReplyidBadRequest  %+v", 400, o.Payload)
+func (o *PostReplyReplyidBadRequest) Error() string {
+	return fmt.Sprintf("[POST /iserver/reply/{replyid}][%d] postReplyReplyidBadRequest  %+v", 400, o.Payload)
 }
 
-func (o *PostIserverReplyReplyidBadRequest) GetPayload() *PostIserverReplyReplyidBadRequestBody {
+func (o *PostReplyReplyidBadRequest) GetPayload() *PostReplyReplyidBadRequestBody {
 	return o.Payload
 }
 
-func (o *PostIserverReplyReplyidBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostReplyReplyidBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(PostIserverReplyReplyidBadRequestBody)
+	o.Payload = new(PostReplyReplyidBadRequestBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -105,10 +105,10 @@ func (o *PostIserverReplyReplyidBadRequest) readResponse(response runtime.Client
 	return nil
 }
 
-/*PostIserverReplyReplyidBadRequestBody post iserver reply replyid bad request body
-swagger:model PostIserverReplyReplyidBadRequestBody
+/*PostReplyReplyidBadRequestBody post iserver reply replyid bad request body
+swagger:model PostReplyReplyidBadRequestBody
 */
-type PostIserverReplyReplyidBadRequestBody struct {
+type PostReplyReplyidBadRequestBody struct {
 
 	// for example-order not confirmed
 	Error string `json:"error,omitempty"`
@@ -118,12 +118,12 @@ type PostIserverReplyReplyidBadRequestBody struct {
 }
 
 // Validate validates this post iserver reply replyid bad request body
-func (o *PostIserverReplyReplyidBadRequestBody) Validate(formats strfmt.Registry) error {
+func (o *PostReplyReplyidBadRequestBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverReplyReplyidBadRequestBody) MarshalBinary() ([]byte, error) {
+func (o *PostReplyReplyidBadRequestBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -131,8 +131,8 @@ func (o *PostIserverReplyReplyidBadRequestBody) MarshalBinary() ([]byte, error) 
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverReplyReplyidBadRequestBody) UnmarshalBinary(b []byte) error {
-	var res PostIserverReplyReplyidBadRequestBody
+func (o *PostReplyReplyidBadRequestBody) UnmarshalBinary(b []byte) error {
+	var res PostReplyReplyidBadRequestBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -140,22 +140,22 @@ func (o *PostIserverReplyReplyidBadRequestBody) UnmarshalBinary(b []byte) error 
 	return nil
 }
 
-/*PostIserverReplyReplyidBody post iserver reply replyid body
-swagger:model PostIserverReplyReplyidBody
+/*PostReplyReplyidBody post iserver reply replyid body
+swagger:model PostReplyReplyidBody
 */
-type PostIserverReplyReplyidBody struct {
+type PostReplyReplyidBody struct {
 
 	// answer to question, true means yes, false means no
 	Confirmed bool `json:"confirmed,omitempty"`
 }
 
 // Validate validates this post iserver reply replyid body
-func (o *PostIserverReplyReplyidBody) Validate(formats strfmt.Registry) error {
+func (o *PostReplyReplyidBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverReplyReplyidBody) MarshalBinary() ([]byte, error) {
+func (o *PostReplyReplyidBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -163,8 +163,8 @@ func (o *PostIserverReplyReplyidBody) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverReplyReplyidBody) UnmarshalBinary(b []byte) error {
-	var res PostIserverReplyReplyidBody
+func (o *PostReplyReplyidBody) UnmarshalBinary(b []byte) error {
+	var res PostReplyReplyidBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -172,10 +172,10 @@ func (o *PostIserverReplyReplyidBody) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-/*PostIserverReplyReplyidOKBodyItems0 post iserver reply replyid o k body items0
-swagger:model PostIserverReplyReplyidOKBodyItems0
+/*PostReplyReplyidOKBodyItems0 post iserver reply replyid o k body items0
+swagger:model PostReplyReplyidOKBodyItems0
 */
-type PostIserverReplyReplyidOKBodyItems0 struct {
+type PostReplyReplyidOKBodyItems0 struct {
 
 	// local order id
 	LocalOrderID string `json:"local_order_id,omitempty"`
@@ -188,12 +188,12 @@ type PostIserverReplyReplyidOKBodyItems0 struct {
 }
 
 // Validate validates this post iserver reply replyid o k body items0
-func (o *PostIserverReplyReplyidOKBodyItems0) Validate(formats strfmt.Registry) error {
+func (o *PostReplyReplyidOKBodyItems0) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverReplyReplyidOKBodyItems0) MarshalBinary() ([]byte, error) {
+func (o *PostReplyReplyidOKBodyItems0) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -201,8 +201,8 @@ func (o *PostIserverReplyReplyidOKBodyItems0) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverReplyReplyidOKBodyItems0) UnmarshalBinary(b []byte) error {
-	var res PostIserverReplyReplyidOKBodyItems0
+func (o *PostReplyReplyidOKBodyItems0) UnmarshalBinary(b []byte) error {
+	var res PostReplyReplyidOKBodyItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

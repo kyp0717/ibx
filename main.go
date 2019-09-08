@@ -17,6 +17,10 @@ package main
 
 import "ibx/cmd"
 
+func init() {
+	cmd.SetPolicy()
+}
+
 func main() {
 	cmd.Execute()
 }

@@ -19,49 +19,49 @@ import (
 	models "ibx/models"
 )
 
-// NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParams creates a new PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewPostAccountAccountIDOrderOrigCustomerOrderIDParams creates a new PostAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized.
-func NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParams() *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewPostAccountAccountIDOrderOrigCustomerOrderIDParams() *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &PostAccountAccountIDOrderOrigCustomerOrderIDParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout creates a new PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewPostAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout creates a new PostAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout(timeout time.Duration) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewPostAccountAccountIDOrderOrigCustomerOrderIDParamsWithTimeout(timeout time.Duration) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &PostAccountAccountIDOrderOrigCustomerOrderIDParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext creates a new PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewPostAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext creates a new PostAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext(ctx context.Context) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewPostAccountAccountIDOrderOrigCustomerOrderIDParamsWithContext(ctx context.Context) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &PostAccountAccountIDOrderOrigCustomerOrderIDParams{
 
 		Context: ctx,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient creates a new PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams object
+// NewPostAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient creates a new PostAccountAccountIDOrderOrigCustomerOrderIDParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient(client *http.Client) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func NewPostAccountAccountIDOrderOrigCustomerOrderIDParamsWithHTTPClient(client *http.Client) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	var ()
-	return &PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams{
+	return &PostAccountAccountIDOrderOrigCustomerOrderIDParams{
 		HTTPClient: client,
 	}
 }
 
-/*PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams contains all the parameters to send to the API endpoint
+/*PostAccountAccountIDOrderOrigCustomerOrderIDParams contains all the parameters to send to the API endpoint
 for the post iserver account account ID order orig customer order ID operation typically these are written to a http.Request
 */
-type PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams struct {
+type PostAccountAccountIDOrderOrigCustomerOrderIDParams struct {
 
 	/*AccountID
 	  account id
@@ -85,73 +85,73 @@ type PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams struct {
 }
 
 // WithTimeout adds the timeout to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithTimeout(timeout time.Duration) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) WithTimeout(timeout time.Duration) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetTimeout(timeout time.Duration) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithContext(ctx context.Context) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) WithContext(ctx context.Context) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetContext(ctx context.Context) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithHTTPClient(client *http.Client) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) WithHTTPClient(client *http.Client) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetHTTPClient(client *http.Client) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithAccountID adds the accountID to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithAccountID(accountID string) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) WithAccountID(accountID string) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetAccountID(accountID)
 	return o
 }
 
 // SetAccountID adds the accountId to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetAccountID(accountID string) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) SetAccountID(accountID string) {
 	o.AccountID = accountID
 }
 
 // WithBody adds the body to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithBody(body *models.ModifyOrder) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) WithBody(body *models.ModifyOrder) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetBody(body)
 	return o
 }
 
 // SetBody adds the body to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetBody(body *models.ModifyOrder) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) SetBody(body *models.ModifyOrder) {
 	o.Body = body
 }
 
 // WithOrigCustomerOrderID adds the origCustomerOrderID to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WithOrigCustomerOrderID(origCustomerOrderID string) *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) WithOrigCustomerOrderID(origCustomerOrderID string) *PostAccountAccountIDOrderOrigCustomerOrderIDParams {
 	o.SetOrigCustomerOrderID(origCustomerOrderID)
 	return o
 }
 
 // SetOrigCustomerOrderID adds the origCustomerOrderId to the post iserver account account ID order orig customer order ID params
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) SetOrigCustomerOrderID(origCustomerOrderID string) {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) SetOrigCustomerOrderID(origCustomerOrderID string) {
 	o.OrigCustomerOrderID = origCustomerOrderID
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *PostAccountAccountIDOrderOrigCustomerOrderIDParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

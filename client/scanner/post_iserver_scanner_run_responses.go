@@ -15,16 +15,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// PostIserverScannerRunReader is a Reader for the PostIserverScannerRun structure.
-type PostIserverScannerRunReader struct {
+// PostScannerRunReader is a Reader for the PostScannerRun structure.
+type PostScannerRunReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverScannerRunReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostScannerRunReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverScannerRunOK()
+		result := NewPostScannerRunOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -35,28 +35,28 @@ func (o *PostIserverScannerRunReader) ReadResponse(response runtime.ClientRespon
 	}
 }
 
-// NewPostIserverScannerRunOK creates a PostIserverScannerRunOK with default headers values
-func NewPostIserverScannerRunOK() *PostIserverScannerRunOK {
-	return &PostIserverScannerRunOK{}
+// NewPostScannerRunOK creates a PostScannerRunOK with default headers values
+func NewPostScannerRunOK() *PostScannerRunOK {
+	return &PostScannerRunOK{}
 }
 
-/*PostIserverScannerRunOK handles this case with default header values.
+/*PostScannerRunOK handles this case with default header values.
 
 returns an array
 */
-type PostIserverScannerRunOK struct {
-	Payload []*PostIserverScannerRunOKBodyItems0
+type PostScannerRunOK struct {
+	Payload []*PostScannerRunOKBodyItems0
 }
 
-func (o *PostIserverScannerRunOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/scanner/run][%d] postIserverScannerRunOK  %+v", 200, o.Payload)
+func (o *PostScannerRunOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/scanner/run][%d] postScannerRunOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverScannerRunOK) GetPayload() []*PostIserverScannerRunOKBodyItems0 {
+func (o *PostScannerRunOK) GetPayload() []*PostScannerRunOKBodyItems0 {
 	return o.Payload
 }
 
-func (o *PostIserverScannerRunOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostScannerRunOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -66,10 +66,10 @@ func (o *PostIserverScannerRunOK) readResponse(response runtime.ClientResponse, 
 	return nil
 }
 
-/*PostIserverScannerRunOKBodyItems0 post iserver scanner run o k body items0
-swagger:model PostIserverScannerRunOKBodyItems0
+/*PostScannerRunOKBodyItems0 post iserver scanner run o k body items0
+swagger:model PostScannerRunOKBodyItems0
 */
-type PostIserverScannerRunOKBodyItems0 struct {
+type PostScannerRunOKBodyItems0 struct {
 
 	// available chart periods
 	AvailableChartPeriods string `json:"available_chart_periods,omitempty"`
@@ -103,12 +103,12 @@ type PostIserverScannerRunOKBodyItems0 struct {
 }
 
 // Validate validates this post iserver scanner run o k body items0
-func (o *PostIserverScannerRunOKBodyItems0) Validate(formats strfmt.Registry) error {
+func (o *PostScannerRunOKBodyItems0) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *PostIserverScannerRunOKBodyItems0) MarshalBinary() ([]byte, error) {
+func (o *PostScannerRunOKBodyItems0) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -116,8 +116,8 @@ func (o *PostIserverScannerRunOKBodyItems0) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *PostIserverScannerRunOKBodyItems0) UnmarshalBinary(b []byte) error {
-	var res PostIserverScannerRunOKBodyItems0
+func (o *PostScannerRunOKBodyItems0) UnmarshalBinary(b []byte) error {
+	var res PostScannerRunOKBodyItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

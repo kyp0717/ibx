@@ -16,16 +16,16 @@ import (
 	models "ibx/models"
 )
 
-// PostIserverReauthenticateReader is a Reader for the PostIserverReauthenticate structure.
-type PostIserverReauthenticateReader struct {
+// PostReauthenticateReader is a Reader for the PostReauthenticate structure.
+type PostReauthenticateReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *PostIserverReauthenticateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *PostReauthenticateReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewPostIserverReauthenticateOK()
+		result := NewPostReauthenticateOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -36,28 +36,28 @@ func (o *PostIserverReauthenticateReader) ReadResponse(response runtime.ClientRe
 	}
 }
 
-// NewPostIserverReauthenticateOK creates a PostIserverReauthenticateOK with default headers values
-func NewPostIserverReauthenticateOK() *PostIserverReauthenticateOK {
-	return &PostIserverReauthenticateOK{}
+// NewPostReauthenticateOK creates a PostReauthenticateOK with default headers values
+func NewPostReauthenticateOK() *PostReauthenticateOK {
+	return &PostReauthenticateOK{}
 }
 
-/*PostIserverReauthenticateOK handles this case with default header values.
+/*PostReauthenticateOK handles this case with default header values.
 
 Authentication Status
 */
-type PostIserverReauthenticateOK struct {
+type PostReauthenticateOK struct {
 	Payload *models.AuthStatus
 }
 
-func (o *PostIserverReauthenticateOK) Error() string {
-	return fmt.Sprintf("[POST /iserver/reauthenticate][%d] postIserverReauthenticateOK  %+v", 200, o.Payload)
+func (o *PostReauthenticateOK) Error() string {
+	return fmt.Sprintf("[POST /iserver/reauthenticate][%d] postReauthenticateOK  %+v", 200, o.Payload)
 }
 
-func (o *PostIserverReauthenticateOK) GetPayload() *models.AuthStatus {
+func (o *PostReauthenticateOK) GetPayload() *models.AuthStatus {
 	return o.Payload
 }
 
-func (o *PostIserverReauthenticateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *PostReauthenticateOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.AuthStatus)
 

@@ -15,22 +15,22 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// GetIserverMarketdataSnapshotReader is a Reader for the GetIserverMarketdataSnapshot structure.
-type GetIserverMarketdataSnapshotReader struct {
+// GetMarketdataSnapshotReader is a Reader for the GetMarketdataSnapshot structure.
+type GetMarketdataSnapshotReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverMarketdataSnapshotReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetMarketdataSnapshotReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverMarketdataSnapshotOK()
+		result := NewGetMarketdataSnapshotOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
 		return result, nil
 	case 400:
-		result := NewGetIserverMarketdataSnapshotBadRequest()
+		result := NewGetMarketdataSnapshotBadRequest()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -41,28 +41,28 @@ func (o *GetIserverMarketdataSnapshotReader) ReadResponse(response runtime.Clien
 	}
 }
 
-// NewGetIserverMarketdataSnapshotOK creates a GetIserverMarketdataSnapshotOK with default headers values
-func NewGetIserverMarketdataSnapshotOK() *GetIserverMarketdataSnapshotOK {
-	return &GetIserverMarketdataSnapshotOK{}
+// NewGetMarketdataSnapshotOK creates a GetMarketdataSnapshotOK with default headers values
+func NewGetMarketdataSnapshotOK() *GetMarketdataSnapshotOK {
+	return &GetMarketdataSnapshotOK{}
 }
 
-/*GetIserverMarketdataSnapshotOK handles this case with default header values.
+/*GetMarketdataSnapshotOK handles this case with default header values.
 
 Returns an array of objects
 */
-type GetIserverMarketdataSnapshotOK struct {
-	Payload []*GetIserverMarketdataSnapshotOKBodyItems0
+type GetMarketdataSnapshotOK struct {
+	Payload []*GetMarketdataSnapshotOKBodyItems0
 }
 
-func (o *GetIserverMarketdataSnapshotOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/marketdata/snapshot][%d] getIserverMarketdataSnapshotOK  %+v", 200, o.Payload)
+func (o *GetMarketdataSnapshotOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/marketdata/snapshot][%d] getMarketdataSnapshotOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverMarketdataSnapshotOK) GetPayload() []*GetIserverMarketdataSnapshotOKBodyItems0 {
+func (o *GetMarketdataSnapshotOK) GetPayload() []*GetMarketdataSnapshotOKBodyItems0 {
 	return o.Payload
 }
 
-func (o *GetIserverMarketdataSnapshotOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetMarketdataSnapshotOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -72,30 +72,30 @@ func (o *GetIserverMarketdataSnapshotOK) readResponse(response runtime.ClientRes
 	return nil
 }
 
-// NewGetIserverMarketdataSnapshotBadRequest creates a GetIserverMarketdataSnapshotBadRequest with default headers values
-func NewGetIserverMarketdataSnapshotBadRequest() *GetIserverMarketdataSnapshotBadRequest {
-	return &GetIserverMarketdataSnapshotBadRequest{}
+// NewGetMarketdataSnapshotBadRequest creates a GetMarketdataSnapshotBadRequest with default headers values
+func NewGetMarketdataSnapshotBadRequest() *GetMarketdataSnapshotBadRequest {
+	return &GetMarketdataSnapshotBadRequest{}
 }
 
-/*GetIserverMarketdataSnapshotBadRequest handles this case with default header values.
+/*GetMarketdataSnapshotBadRequest handles this case with default header values.
 
 sent when accounts are not queried before sending this request
 */
-type GetIserverMarketdataSnapshotBadRequest struct {
-	Payload *GetIserverMarketdataSnapshotBadRequestBody
+type GetMarketdataSnapshotBadRequest struct {
+	Payload *GetMarketdataSnapshotBadRequestBody
 }
 
-func (o *GetIserverMarketdataSnapshotBadRequest) Error() string {
-	return fmt.Sprintf("[GET /iserver/marketdata/snapshot][%d] getIserverMarketdataSnapshotBadRequest  %+v", 400, o.Payload)
+func (o *GetMarketdataSnapshotBadRequest) Error() string {
+	return fmt.Sprintf("[GET /iserver/marketdata/snapshot][%d] getMarketdataSnapshotBadRequest  %+v", 400, o.Payload)
 }
 
-func (o *GetIserverMarketdataSnapshotBadRequest) GetPayload() *GetIserverMarketdataSnapshotBadRequestBody {
+func (o *GetMarketdataSnapshotBadRequest) GetPayload() *GetMarketdataSnapshotBadRequestBody {
 	return o.Payload
 }
 
-func (o *GetIserverMarketdataSnapshotBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetMarketdataSnapshotBadRequest) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(GetIserverMarketdataSnapshotBadRequestBody)
+	o.Payload = new(GetMarketdataSnapshotBadRequestBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -105,10 +105,10 @@ func (o *GetIserverMarketdataSnapshotBadRequest) readResponse(response runtime.C
 	return nil
 }
 
-/*GetIserverMarketdataSnapshotBadRequestBody get iserver marketdata snapshot bad request body
-swagger:model GetIserverMarketdataSnapshotBadRequestBody
+/*GetMarketdataSnapshotBadRequestBody get iserver marketdata snapshot bad request body
+swagger:model GetMarketdataSnapshotBadRequestBody
 */
-type GetIserverMarketdataSnapshotBadRequestBody struct {
+type GetMarketdataSnapshotBadRequestBody struct {
 
 	// error
 	Error string `json:"error,omitempty"`
@@ -118,12 +118,12 @@ type GetIserverMarketdataSnapshotBadRequestBody struct {
 }
 
 // Validate validates this get iserver marketdata snapshot bad request body
-func (o *GetIserverMarketdataSnapshotBadRequestBody) Validate(formats strfmt.Registry) error {
+func (o *GetMarketdataSnapshotBadRequestBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *GetIserverMarketdataSnapshotBadRequestBody) MarshalBinary() ([]byte, error) {
+func (o *GetMarketdataSnapshotBadRequestBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -131,8 +131,8 @@ func (o *GetIserverMarketdataSnapshotBadRequestBody) MarshalBinary() ([]byte, er
 }
 
 // UnmarshalBinary interface implementation
-func (o *GetIserverMarketdataSnapshotBadRequestBody) UnmarshalBinary(b []byte) error {
-	var res GetIserverMarketdataSnapshotBadRequestBody
+func (o *GetMarketdataSnapshotBadRequestBody) UnmarshalBinary(b []byte) error {
+	var res GetMarketdataSnapshotBadRequestBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
@@ -140,10 +140,10 @@ func (o *GetIserverMarketdataSnapshotBadRequestBody) UnmarshalBinary(b []byte) e
 	return nil
 }
 
-/*GetIserverMarketdataSnapshotOKBodyItems0 get iserver marketdata snapshot o k body items0
-swagger:model GetIserverMarketdataSnapshotOKBodyItems0
+/*GetMarketdataSnapshotOKBodyItems0 get iserver marketdata snapshot o k body items0
+swagger:model GetMarketdataSnapshotOKBodyItems0
 */
-type GetIserverMarketdataSnapshotOKBodyItems0 struct {
+type GetMarketdataSnapshotOKBodyItems0 struct {
 
 	// Last Price
 	Nr31 string `json:"31,omitempty"`
@@ -305,12 +305,12 @@ type GetIserverMarketdataSnapshotOKBodyItems0 struct {
 }
 
 // Validate validates this get iserver marketdata snapshot o k body items0
-func (o *GetIserverMarketdataSnapshotOKBodyItems0) Validate(formats strfmt.Registry) error {
+func (o *GetMarketdataSnapshotOKBodyItems0) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *GetIserverMarketdataSnapshotOKBodyItems0) MarshalBinary() ([]byte, error) {
+func (o *GetMarketdataSnapshotOKBodyItems0) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -318,8 +318,8 @@ func (o *GetIserverMarketdataSnapshotOKBodyItems0) MarshalBinary() ([]byte, erro
 }
 
 // UnmarshalBinary interface implementation
-func (o *GetIserverMarketdataSnapshotOKBodyItems0) UnmarshalBinary(b []byte) error {
-	var res GetIserverMarketdataSnapshotOKBodyItems0
+func (o *GetMarketdataSnapshotOKBodyItems0) UnmarshalBinary(b []byte) error {
+	var res GetMarketdataSnapshotOKBodyItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

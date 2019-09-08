@@ -17,49 +17,49 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewPostIserverAccountAccountIDOrdersParams creates a new PostIserverAccountAccountIDOrdersParams object
+// NewPostAccountAccountIDOrdersParams creates a new PostAccountAccountIDOrdersParams object
 // with the default values initialized.
-func NewPostIserverAccountAccountIDOrdersParams() *PostIserverAccountAccountIDOrdersParams {
+func NewPostAccountAccountIDOrdersParams() *PostAccountAccountIDOrdersParams {
 	var ()
-	return &PostIserverAccountAccountIDOrdersParams{
+	return &PostAccountAccountIDOrdersParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrdersParamsWithTimeout creates a new PostIserverAccountAccountIDOrdersParams object
+// NewPostAccountAccountIDOrdersParamsWithTimeout creates a new PostAccountAccountIDOrdersParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewPostIserverAccountAccountIDOrdersParamsWithTimeout(timeout time.Duration) *PostIserverAccountAccountIDOrdersParams {
+func NewPostAccountAccountIDOrdersParamsWithTimeout(timeout time.Duration) *PostAccountAccountIDOrdersParams {
 	var ()
-	return &PostIserverAccountAccountIDOrdersParams{
+	return &PostAccountAccountIDOrdersParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrdersParamsWithContext creates a new PostIserverAccountAccountIDOrdersParams object
+// NewPostAccountAccountIDOrdersParamsWithContext creates a new PostAccountAccountIDOrdersParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewPostIserverAccountAccountIDOrdersParamsWithContext(ctx context.Context) *PostIserverAccountAccountIDOrdersParams {
+func NewPostAccountAccountIDOrdersParamsWithContext(ctx context.Context) *PostAccountAccountIDOrdersParams {
 	var ()
-	return &PostIserverAccountAccountIDOrdersParams{
+	return &PostAccountAccountIDOrdersParams{
 
 		Context: ctx,
 	}
 }
 
-// NewPostIserverAccountAccountIDOrdersParamsWithHTTPClient creates a new PostIserverAccountAccountIDOrdersParams object
+// NewPostAccountAccountIDOrdersParamsWithHTTPClient creates a new PostAccountAccountIDOrdersParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewPostIserverAccountAccountIDOrdersParamsWithHTTPClient(client *http.Client) *PostIserverAccountAccountIDOrdersParams {
+func NewPostAccountAccountIDOrdersParamsWithHTTPClient(client *http.Client) *PostAccountAccountIDOrdersParams {
 	var ()
-	return &PostIserverAccountAccountIDOrdersParams{
+	return &PostAccountAccountIDOrdersParams{
 		HTTPClient: client,
 	}
 }
 
-/*PostIserverAccountAccountIDOrdersParams contains all the parameters to send to the API endpoint
+/*PostAccountAccountIDOrdersParams contains all the parameters to send to the API endpoint
 for the post iserver account account ID orders operation typically these are written to a http.Request
 */
-type PostIserverAccountAccountIDOrdersParams struct {
+type PostAccountAccountIDOrdersParams struct {
 
 	/*AccountID
 	  account id
@@ -70,7 +70,7 @@ type PostIserverAccountAccountIDOrdersParams struct {
 	  order request info
 
 	*/
-	Body PostIserverAccountAccountIDOrdersBody
+	Body PostAccountAccountIDOrdersBody
 
 	timeout    time.Duration
 	Context    context.Context
@@ -78,62 +78,62 @@ type PostIserverAccountAccountIDOrdersParams struct {
 }
 
 // WithTimeout adds the timeout to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) WithTimeout(timeout time.Duration) *PostIserverAccountAccountIDOrdersParams {
+func (o *PostAccountAccountIDOrdersParams) WithTimeout(timeout time.Duration) *PostAccountAccountIDOrdersParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) SetTimeout(timeout time.Duration) {
+func (o *PostAccountAccountIDOrdersParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) WithContext(ctx context.Context) *PostIserverAccountAccountIDOrdersParams {
+func (o *PostAccountAccountIDOrdersParams) WithContext(ctx context.Context) *PostAccountAccountIDOrdersParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) SetContext(ctx context.Context) {
+func (o *PostAccountAccountIDOrdersParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) WithHTTPClient(client *http.Client) *PostIserverAccountAccountIDOrdersParams {
+func (o *PostAccountAccountIDOrdersParams) WithHTTPClient(client *http.Client) *PostAccountAccountIDOrdersParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) SetHTTPClient(client *http.Client) {
+func (o *PostAccountAccountIDOrdersParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithAccountID adds the accountID to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) WithAccountID(accountID string) *PostIserverAccountAccountIDOrdersParams {
+func (o *PostAccountAccountIDOrdersParams) WithAccountID(accountID string) *PostAccountAccountIDOrdersParams {
 	o.SetAccountID(accountID)
 	return o
 }
 
 // SetAccountID adds the accountId to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) SetAccountID(accountID string) {
+func (o *PostAccountAccountIDOrdersParams) SetAccountID(accountID string) {
 	o.AccountID = accountID
 }
 
 // WithBody adds the body to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) WithBody(body PostIserverAccountAccountIDOrdersBody) *PostIserverAccountAccountIDOrdersParams {
+func (o *PostAccountAccountIDOrdersParams) WithBody(body PostAccountAccountIDOrdersBody) *PostAccountAccountIDOrdersParams {
 	o.SetBody(body)
 	return o
 }
 
 // SetBody adds the body to the post iserver account account ID orders params
-func (o *PostIserverAccountAccountIDOrdersParams) SetBody(body PostIserverAccountAccountIDOrdersBody) {
+func (o *PostAccountAccountIDOrdersParams) SetBody(body PostAccountAccountIDOrdersBody) {
 	o.Body = body
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *PostIserverAccountAccountIDOrdersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *PostAccountAccountIDOrdersParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

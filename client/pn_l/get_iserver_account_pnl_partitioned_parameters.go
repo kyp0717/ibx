@@ -17,89 +17,89 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewGetIserverAccountPnlPartitionedParams creates a new GetIserverAccountPnlPartitionedParams object
+// NewGetAccountPnlPartitionedParams creates a new GetAccountPnlPartitionedParams object
 // with the default values initialized.
-func NewGetIserverAccountPnlPartitionedParams() *GetIserverAccountPnlPartitionedParams {
+func NewGetAccountPnlPartitionedParams() *GetAccountPnlPartitionedParams {
 
-	return &GetIserverAccountPnlPartitionedParams{
+	return &GetAccountPnlPartitionedParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewGetIserverAccountPnlPartitionedParamsWithTimeout creates a new GetIserverAccountPnlPartitionedParams object
+// NewGetAccountPnlPartitionedParamsWithTimeout creates a new GetAccountPnlPartitionedParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewGetIserverAccountPnlPartitionedParamsWithTimeout(timeout time.Duration) *GetIserverAccountPnlPartitionedParams {
+func NewGetAccountPnlPartitionedParamsWithTimeout(timeout time.Duration) *GetAccountPnlPartitionedParams {
 
-	return &GetIserverAccountPnlPartitionedParams{
+	return &GetAccountPnlPartitionedParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewGetIserverAccountPnlPartitionedParamsWithContext creates a new GetIserverAccountPnlPartitionedParams object
+// NewGetAccountPnlPartitionedParamsWithContext creates a new GetAccountPnlPartitionedParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewGetIserverAccountPnlPartitionedParamsWithContext(ctx context.Context) *GetIserverAccountPnlPartitionedParams {
+func NewGetAccountPnlPartitionedParamsWithContext(ctx context.Context) *GetAccountPnlPartitionedParams {
 
-	return &GetIserverAccountPnlPartitionedParams{
+	return &GetAccountPnlPartitionedParams{
 
 		Context: ctx,
 	}
 }
 
-// NewGetIserverAccountPnlPartitionedParamsWithHTTPClient creates a new GetIserverAccountPnlPartitionedParams object
+// NewGetAccountPnlPartitionedParamsWithHTTPClient creates a new GetAccountPnlPartitionedParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewGetIserverAccountPnlPartitionedParamsWithHTTPClient(client *http.Client) *GetIserverAccountPnlPartitionedParams {
+func NewGetAccountPnlPartitionedParamsWithHTTPClient(client *http.Client) *GetAccountPnlPartitionedParams {
 
-	return &GetIserverAccountPnlPartitionedParams{
+	return &GetAccountPnlPartitionedParams{
 		HTTPClient: client,
 	}
 }
 
-/*GetIserverAccountPnlPartitionedParams contains all the parameters to send to the API endpoint
+/*GetAccountPnlPartitionedParams contains all the parameters to send to the API endpoint
 for the get iserver account pnl partitioned operation typically these are written to a http.Request
 */
-type GetIserverAccountPnlPartitionedParams struct {
+type GetAccountPnlPartitionedParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
 }
 
 // WithTimeout adds the timeout to the get iserver account pnl partitioned params
-func (o *GetIserverAccountPnlPartitionedParams) WithTimeout(timeout time.Duration) *GetIserverAccountPnlPartitionedParams {
+func (o *GetAccountPnlPartitionedParams) WithTimeout(timeout time.Duration) *GetAccountPnlPartitionedParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the get iserver account pnl partitioned params
-func (o *GetIserverAccountPnlPartitionedParams) SetTimeout(timeout time.Duration) {
+func (o *GetAccountPnlPartitionedParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the get iserver account pnl partitioned params
-func (o *GetIserverAccountPnlPartitionedParams) WithContext(ctx context.Context) *GetIserverAccountPnlPartitionedParams {
+func (o *GetAccountPnlPartitionedParams) WithContext(ctx context.Context) *GetAccountPnlPartitionedParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the get iserver account pnl partitioned params
-func (o *GetIserverAccountPnlPartitionedParams) SetContext(ctx context.Context) {
+func (o *GetAccountPnlPartitionedParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the get iserver account pnl partitioned params
-func (o *GetIserverAccountPnlPartitionedParams) WithHTTPClient(client *http.Client) *GetIserverAccountPnlPartitionedParams {
+func (o *GetAccountPnlPartitionedParams) WithHTTPClient(client *http.Client) *GetAccountPnlPartitionedParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the get iserver account pnl partitioned params
-func (o *GetIserverAccountPnlPartitionedParams) SetHTTPClient(client *http.Client) {
+func (o *GetAccountPnlPartitionedParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *GetIserverAccountPnlPartitionedParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *GetAccountPnlPartitionedParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

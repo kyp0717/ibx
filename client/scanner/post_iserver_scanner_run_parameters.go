@@ -19,49 +19,49 @@ import (
 	models "ibx/models"
 )
 
-// NewPostIserverScannerRunParams creates a new PostIserverScannerRunParams object
+// NewPostScannerRunParams creates a new PostScannerRunParams object
 // with the default values initialized.
-func NewPostIserverScannerRunParams() *PostIserverScannerRunParams {
+func NewPostScannerRunParams() *PostScannerRunParams {
 	var ()
-	return &PostIserverScannerRunParams{
+	return &PostScannerRunParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewPostIserverScannerRunParamsWithTimeout creates a new PostIserverScannerRunParams object
+// NewPostScannerRunParamsWithTimeout creates a new PostScannerRunParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewPostIserverScannerRunParamsWithTimeout(timeout time.Duration) *PostIserverScannerRunParams {
+func NewPostScannerRunParamsWithTimeout(timeout time.Duration) *PostScannerRunParams {
 	var ()
-	return &PostIserverScannerRunParams{
+	return &PostScannerRunParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewPostIserverScannerRunParamsWithContext creates a new PostIserverScannerRunParams object
+// NewPostScannerRunParamsWithContext creates a new PostScannerRunParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewPostIserverScannerRunParamsWithContext(ctx context.Context) *PostIserverScannerRunParams {
+func NewPostScannerRunParamsWithContext(ctx context.Context) *PostScannerRunParams {
 	var ()
-	return &PostIserverScannerRunParams{
+	return &PostScannerRunParams{
 
 		Context: ctx,
 	}
 }
 
-// NewPostIserverScannerRunParamsWithHTTPClient creates a new PostIserverScannerRunParams object
+// NewPostScannerRunParamsWithHTTPClient creates a new PostScannerRunParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewPostIserverScannerRunParamsWithHTTPClient(client *http.Client) *PostIserverScannerRunParams {
+func NewPostScannerRunParamsWithHTTPClient(client *http.Client) *PostScannerRunParams {
 	var ()
-	return &PostIserverScannerRunParams{
+	return &PostScannerRunParams{
 		HTTPClient: client,
 	}
 }
 
-/*PostIserverScannerRunParams contains all the parameters to send to the API endpoint
+/*PostScannerRunParams contains all the parameters to send to the API endpoint
 for the post iserver scanner run operation typically these are written to a http.Request
 */
-type PostIserverScannerRunParams struct {
+type PostScannerRunParams struct {
 
 	/*Body
 	  modify-order request
@@ -75,51 +75,51 @@ type PostIserverScannerRunParams struct {
 }
 
 // WithTimeout adds the timeout to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) WithTimeout(timeout time.Duration) *PostIserverScannerRunParams {
+func (o *PostScannerRunParams) WithTimeout(timeout time.Duration) *PostScannerRunParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) SetTimeout(timeout time.Duration) {
+func (o *PostScannerRunParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) WithContext(ctx context.Context) *PostIserverScannerRunParams {
+func (o *PostScannerRunParams) WithContext(ctx context.Context) *PostScannerRunParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) SetContext(ctx context.Context) {
+func (o *PostScannerRunParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) WithHTTPClient(client *http.Client) *PostIserverScannerRunParams {
+func (o *PostScannerRunParams) WithHTTPClient(client *http.Client) *PostScannerRunParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) SetHTTPClient(client *http.Client) {
+func (o *PostScannerRunParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WithBody adds the body to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) WithBody(body *models.ScannerParams) *PostIserverScannerRunParams {
+func (o *PostScannerRunParams) WithBody(body *models.ScannerParams) *PostScannerRunParams {
 	o.SetBody(body)
 	return o
 }
 
 // SetBody adds the body to the post iserver scanner run params
-func (o *PostIserverScannerRunParams) SetBody(body *models.ScannerParams) {
+func (o *PostScannerRunParams) SetBody(body *models.ScannerParams) {
 	o.Body = body
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *PostIserverScannerRunParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *PostScannerRunParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

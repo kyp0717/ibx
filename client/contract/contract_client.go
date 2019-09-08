@@ -7,9 +7,7 @@ package contract
 
 import (
 	"fmt"
-
 	"github.com/go-openapi/runtime"
-
 	strfmt "github.com/go-openapi/strfmt"
 )
 
@@ -27,44 +25,42 @@ type Client struct {
 }
 
 /*
-GetIserverContractConidInfo contracts info
-
-get contract details, you can use this to prefill your order before you submit an order
+GetContractConidInfo contracts info get contract details,
+you can use this to prefill your order before you submit an order
 */
-func (a *Client) GetIserverContractConidInfo(params *GetIserverContractConidInfoParams) (*GetIserverContractConidInfoOK, error) {
+func (a *Client) GetContractConidInfo(params *GetContractConidInfoParams) (*GetContractConidInfoOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetIserverContractConidInfoParams()
+		params = NewGetContractConidInfoParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "GetIserverContractConidInfo",
+		ID:                 "GetContractConidInfo",
 		Method:             "GET",
 		PathPattern:        "/iserver/contract/{conid}/info",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetIserverContractConidInfoReader{formats: a.formats},
+		Reader:             &GetContractConidInfoReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetIserverContractConidInfoOK)
+	success, ok := result.(*GetContractConidInfoOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIserverContractConidInfo: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for GetContractConidInfo: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
 GetTrsrvFutures securities futures by symbol
-
 Returns a list of non-expired future contracts for given symbol(s)
 */
 func (a *Client) GetTrsrvFutures(params *GetTrsrvFuturesParams) (*GetTrsrvFuturesOK, error) {
@@ -99,36 +95,36 @@ func (a *Client) GetTrsrvFutures(params *GetTrsrvFuturesParams) (*GetTrsrvFuture
 }
 
 /*
-PostIserverSecdefSearch searches by symbol or name
+PostSecdefSearch searches by symbol or name
 */
-func (a *Client) PostIserverSecdefSearch(params *PostIserverSecdefSearchParams) (*PostIserverSecdefSearchOK, error) {
+func (a *Client) PostSecdefSearch(params *PostSecdefSearchParams) (*PostSecdefSearchOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverSecdefSearchParams()
+		params = NewPostSecdefSearchParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverSecdefSearch",
+		ID:                 "PostSecdefSearch",
 		Method:             "POST",
 		PathPattern:        "/iserver/secdef/search",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverSecdefSearchReader{formats: a.formats},
+		Reader:             &PostSecdefSearchReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverSecdefSearchOK)
+	success, ok := result.(*PostSecdefSearchOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverSecdefSearch: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostSecdefSearch: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

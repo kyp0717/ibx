@@ -15,16 +15,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDReader is a Reader for the DeleteIserverAccountAccountIDOrderOrigCustomerOrderID structure.
-type DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDReader struct {
+// DeleteAccountAccountIDOrderOrigCustomerOrderIDReader is a Reader for the DeleteAccountAccountIDOrderOrigCustomerOrderID structure.
+type DeleteAccountAccountIDOrderOrigCustomerOrderIDReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK()
+		result := NewDeleteAccountAccountIDOrderOrigCustomerOrderIDOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -35,28 +35,28 @@ func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDReader) ReadRespon
 	}
 }
 
-// NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK creates a DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK with default headers values
-func NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK() *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK {
-	return &DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK{}
+// NewDeleteAccountAccountIDOrderOrigCustomerOrderIDOK creates a DeleteAccountAccountIDOrderOrigCustomerOrderIDOK with default headers values
+func NewDeleteAccountAccountIDOrderOrigCustomerOrderIDOK() *DeleteAccountAccountIDOrderOrigCustomerOrderIDOK {
+	return &DeleteAccountAccountIDOrderOrigCustomerOrderIDOK{}
 }
 
-/*DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK handles this case with default header values.
+/*DeleteAccountAccountIDOrderOrigCustomerOrderIDOK handles this case with default header values.
 
 returns an array
 */
-type DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK struct {
-	Payload []*DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
+type DeleteAccountAccountIDOrderOrigCustomerOrderIDOK struct {
+	Payload []*DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
 }
 
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK) Error() string {
-	return fmt.Sprintf("[DELETE /iserver/account/{accountId}/order/{origCustomerOrderId}][%d] deleteIserverAccountAccountIdOrderOrigCustomerOrderIdOK  %+v", 200, o.Payload)
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDOK) Error() string {
+	return fmt.Sprintf("[DELETE /iserver/account/{accountId}/order/{origCustomerOrderId}][%d] deleteAccountAccountIdOrderOrigCustomerOrderIdOK  %+v", 200, o.Payload)
 }
 
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK) GetPayload() []*DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDOK) GetPayload() []*DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 {
 	return o.Payload
 }
 
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
@@ -66,10 +66,10 @@ func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK) readResponse(r
 	return nil
 }
 
-/*DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 delete iserver account account ID order orig customer order ID o k body items0
-swagger:model DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
+/*DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 delete iserver account account ID order orig customer order ID o k body items0
+swagger:model DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
 */
-type DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 struct {
+type DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 struct {
 
 	// local order id
 	LocalOrderID string `json:"local_order_id,omitempty"`
@@ -82,12 +82,12 @@ type DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0 struct {
 }
 
 // Validate validates this delete iserver account account ID order orig customer order ID o k body items0
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) Validate(formats strfmt.Registry) error {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) MarshalBinary() ([]byte, error) {
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -95,8 +95,8 @@ func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) Mars
 }
 
 // UnmarshalBinary interface implementation
-func (o *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) UnmarshalBinary(b []byte) error {
-	var res DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
+func (o *DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0) UnmarshalBinary(b []byte) error {
+	var res DeleteAccountAccountIDOrderOrigCustomerOrderIDOKBodyItems0
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

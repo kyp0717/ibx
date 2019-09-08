@@ -15,16 +15,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// GetIserverAccountsReader is a Reader for the GetIserverAccounts structure.
-type GetIserverAccountsReader struct {
+// GetAccountsReader is a Reader for the GetAccounts structure.
+type GetAccountsReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverAccountsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetAccountsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverAccountsOK()
+		result := NewGetAccountsOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -35,30 +35,30 @@ func (o *GetIserverAccountsReader) ReadResponse(response runtime.ClientResponse,
 	}
 }
 
-// NewGetIserverAccountsOK creates a GetIserverAccountsOK with default headers values
-func NewGetIserverAccountsOK() *GetIserverAccountsOK {
-	return &GetIserverAccountsOK{}
+// NewGetAccountsOK creates a GetAccountsOK with default headers values
+func NewGetAccountsOK() *GetAccountsOK {
+	return &GetAccountsOK{}
 }
 
-/*GetIserverAccountsOK handles this case with default header values.
+/*GetAccountsOK handles this case with default header values.
 
 An array of accounts
 */
-type GetIserverAccountsOK struct {
-	Payload *GetIserverAccountsOKBody
+type GetAccountsOK struct {
+	Payload *GetAccountsOKBody
 }
 
-func (o *GetIserverAccountsOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/accounts][%d] getIserverAccountsOK  %+v", 200, o.Payload)
+func (o *GetAccountsOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/accounts][%d] getAccountsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverAccountsOK) GetPayload() *GetIserverAccountsOKBody {
+func (o *GetAccountsOK) GetPayload() *GetAccountsOKBody {
 	return o.Payload
 }
 
-func (o *GetIserverAccountsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetAccountsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(GetIserverAccountsOKBody)
+	o.Payload = new(GetAccountsOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -68,10 +68,10 @@ func (o *GetIserverAccountsOK) readResponse(response runtime.ClientResponse, con
 	return nil
 }
 
-/*GetIserverAccountsOKBody get iserver accounts o k body
-swagger:model GetIserverAccountsOKBody
+/*GetAccountsOKBody get iserver accounts o k body
+swagger:model GetAccountsOKBody
 */
-type GetIserverAccountsOKBody struct {
+type GetAccountsOKBody struct {
 
 	// Unique account id
 	Accounts []string `json:"accounts"`
@@ -84,12 +84,12 @@ type GetIserverAccountsOKBody struct {
 }
 
 // Validate validates this get iserver accounts o k body
-func (o *GetIserverAccountsOKBody) Validate(formats strfmt.Registry) error {
+func (o *GetAccountsOKBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (o *GetIserverAccountsOKBody) MarshalBinary() ([]byte, error) {
+func (o *GetAccountsOKBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -97,8 +97,8 @@ func (o *GetIserverAccountsOKBody) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *GetIserverAccountsOKBody) UnmarshalBinary(b []byte) error {
-	var res GetIserverAccountsOKBody
+func (o *GetAccountsOKBody) UnmarshalBinary(b []byte) error {
+	var res GetAccountsOKBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

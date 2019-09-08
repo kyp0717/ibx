@@ -27,41 +27,41 @@ type Client struct {
 }
 
 /*
-DeleteIserverAccountAccountIDOrderOrigCustomerOrderID deletes order
+DeleteAccountAccountIDOrderOrigCustomerOrderID deletes order
 */
-func (a *Client) DeleteIserverAccountAccountIDOrderOrigCustomerOrderID(params *DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams) (*DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK, error) {
+func (a *Client) DeleteAccountAccountIDOrderOrigCustomerOrderID(params *DeleteAccountAccountIDOrderOrigCustomerOrderIDParams) (*DeleteAccountAccountIDOrderOrigCustomerOrderIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDeleteIserverAccountAccountIDOrderOrigCustomerOrderIDParams()
+		params = NewDeleteAccountAccountIDOrderOrigCustomerOrderIDParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "DeleteIserverAccountAccountIDOrderOrigCustomerOrderID",
+		ID:                 "DeleteAccountAccountIDOrderOrigCustomerOrderID",
 		Method:             "DELETE",
 		PathPattern:        "/iserver/account/{accountId}/order/{origCustomerOrderId}",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDReader{formats: a.formats},
+		Reader:             &DeleteAccountAccountIDOrderOrigCustomerOrderIDReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*DeleteIserverAccountAccountIDOrderOrigCustomerOrderIDOK)
+	success, ok := result.(*DeleteAccountAccountIDOrderOrigCustomerOrderIDOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DeleteIserverAccountAccountIDOrderOrigCustomerOrderID: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for DeleteAccountAccountIDOrderOrigCustomerOrderID: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-GetIserverAccountOrders lives orders
+GetAccountOrders lives orders
 
 The end-point is meant to be used in polling mode, e.g. requesting every x seconds.
 The response will contain two objects, one is notification, the other is orders.
@@ -69,220 +69,220 @@ Orders is the list of orders (cancelled, filled, submitted) with activity in the
 Notifications contains information about execute orders as they happen, see status field.
 
 */
-func (a *Client) GetIserverAccountOrders(params *GetIserverAccountOrdersParams) (*GetIserverAccountOrdersOK, error) {
+func (a *Client) GetAccountOrders(params *GetAccountOrdersParams) (*GetAccountOrdersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetIserverAccountOrdersParams()
+		params = NewGetAccountOrdersParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "GetIserverAccountOrders",
+		ID:                 "GetAccountOrders",
 		Method:             "GET",
 		PathPattern:        "/iserver/account/orders",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetIserverAccountOrdersReader{formats: a.formats},
+		Reader:             &GetAccountOrdersReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetIserverAccountOrdersOK)
+	success, ok := result.(*GetAccountOrdersOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIserverAccountOrders: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for GetAccountOrders: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-PostIserverAccountAccountIDOrder places order
+PostAccountAccountIDOrder places order
 
 Please note here, sometimes this end-point alone can't make sure you submit the order successfully,
 you could receive some questions in the response, you have to to answer them in order to submit the order
 successfully. You can use "/iserver/reply/{replyid}" end-point to answer questions
 
 */
-func (a *Client) PostIserverAccountAccountIDOrder(params *PostIserverAccountAccountIDOrderParams) (*PostIserverAccountAccountIDOrderOK, error) {
+func (a *Client) PostAccountAccountIDOrder(params *PostAccountAccountIDOrderParams) (*PostAccountAccountIDOrderOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverAccountAccountIDOrderParams()
+		params = NewPostAccountAccountIDOrderParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverAccountAccountIDOrder",
+		ID:                 "PostAccountAccountIDOrder",
 		Method:             "POST",
 		PathPattern:        "/iserver/account/{accountId}/order",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverAccountAccountIDOrderReader{formats: a.formats},
+		Reader:             &PostAccountAccountIDOrderReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverAccountAccountIDOrderOK)
+	success, ok := result.(*PostAccountAccountIDOrderOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverAccountAccountIDOrder: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostAccountAccountIDOrder: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-PostIserverAccountAccountIDOrderOrigCustomerOrderID modifies order
+PostAccountAccountIDOrderOrigCustomerOrderID modifies order
 
 Modifies an open order. The /iserver/accounts endpoint must first be called.
 */
-func (a *Client) PostIserverAccountAccountIDOrderOrigCustomerOrderID(params *PostIserverAccountAccountIDOrderOrigCustomerOrderIDParams) (*PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK, error) {
+func (a *Client) PostAccountAccountIDOrderOrigCustomerOrderID(params *PostAccountAccountIDOrderOrigCustomerOrderIDParams) (*PostAccountAccountIDOrderOrigCustomerOrderIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverAccountAccountIDOrderOrigCustomerOrderIDParams()
+		params = NewPostAccountAccountIDOrderOrigCustomerOrderIDParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverAccountAccountIDOrderOrigCustomerOrderID",
+		ID:                 "PostAccountAccountIDOrderOrigCustomerOrderID",
 		Method:             "POST",
 		PathPattern:        "/iserver/account/{accountId}/order/{origCustomerOrderId}",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverAccountAccountIDOrderOrigCustomerOrderIDReader{formats: a.formats},
+		Reader:             &PostAccountAccountIDOrderOrigCustomerOrderIDReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverAccountAccountIDOrderOrigCustomerOrderIDOK)
+	success, ok := result.(*PostAccountAccountIDOrderOrigCustomerOrderIDOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverAccountAccountIDOrderOrigCustomerOrderID: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostAccountAccountIDOrderOrigCustomerOrderID: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-PostIserverAccountAccountIDOrderWhatif previews order
+PostAccountAccountIDOrderWhatif previews order
 
 This end-point allows you to preview order without actually submitting the order and you can get
 commission information in the response.
 
 */
-func (a *Client) PostIserverAccountAccountIDOrderWhatif(params *PostIserverAccountAccountIDOrderWhatifParams) (*PostIserverAccountAccountIDOrderWhatifOK, error) {
+func (a *Client) PostAccountAccountIDOrderWhatif(params *PostAccountAccountIDOrderWhatifParams) (*PostAccountAccountIDOrderWhatifOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverAccountAccountIDOrderWhatifParams()
+		params = NewPostAccountAccountIDOrderWhatifParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverAccountAccountIDOrderWhatif",
+		ID:                 "PostAccountAccountIDOrderWhatif",
 		Method:             "POST",
 		PathPattern:        "/iserver/account/{accountId}/order/whatif",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverAccountAccountIDOrderWhatifReader{formats: a.formats},
+		Reader:             &PostAccountAccountIDOrderWhatifReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverAccountAccountIDOrderWhatifOK)
+	success, ok := result.(*PostAccountAccountIDOrderWhatifOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverAccountAccountIDOrderWhatif: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostAccountAccountIDOrderWhatif: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-PostIserverAccountAccountIDOrders places orders support bracket orders
+PostAccountAccountIDOrders places orders support bracket orders
 
 You can pass a list of orders here
 
 */
-func (a *Client) PostIserverAccountAccountIDOrders(params *PostIserverAccountAccountIDOrdersParams) (*PostIserverAccountAccountIDOrdersOK, error) {
+func (a *Client) PostAccountAccountIDOrders(params *PostAccountAccountIDOrdersParams) (*PostAccountAccountIDOrdersOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverAccountAccountIDOrdersParams()
+		params = NewPostAccountAccountIDOrdersParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverAccountAccountIDOrders",
+		ID:                 "PostAccountAccountIDOrders",
 		Method:             "POST",
 		PathPattern:        "/iserver/account/{accountId}/orders",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverAccountAccountIDOrdersReader{formats: a.formats},
+		Reader:             &PostAccountAccountIDOrdersReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverAccountAccountIDOrdersOK)
+	success, ok := result.(*PostAccountAccountIDOrdersOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverAccountAccountIDOrders: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostAccountAccountIDOrders: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-PostIserverReplyReplyid places order reply
+PostReplyReplyid places order reply
 
 Reply to questions when placing orders and submit orders
 */
-func (a *Client) PostIserverReplyReplyid(params *PostIserverReplyReplyidParams) (*PostIserverReplyReplyidOK, error) {
+func (a *Client) PostReplyReplyid(params *PostReplyReplyidParams) (*PostReplyReplyidOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverReplyReplyidParams()
+		params = NewPostReplyReplyidParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverReplyReplyid",
+		ID:                 "PostReplyReplyid",
 		Method:             "POST",
 		PathPattern:        "/iserver/reply/{replyid}",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverReplyReplyidReader{formats: a.formats},
+		Reader:             &PostReplyReplyidReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverReplyReplyidOK)
+	success, ok := result.(*PostReplyReplyidOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverReplyReplyid: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostReplyReplyid: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

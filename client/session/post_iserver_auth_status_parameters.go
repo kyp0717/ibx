@@ -17,89 +17,89 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// NewPostIserverAuthStatusParams creates a new PostIserverAuthStatusParams object
+// NewPostAuthStatusParams creates a new PostAuthStatusParams object
 // with the default values initialized.
-func NewPostIserverAuthStatusParams() *PostIserverAuthStatusParams {
+func NewPostAuthStatusParams() *PostAuthStatusParams {
 
-	return &PostIserverAuthStatusParams{
+	return &PostAuthStatusParams{
 
 		timeout: cr.DefaultTimeout,
 	}
 }
 
-// NewPostIserverAuthStatusParamsWithTimeout creates a new PostIserverAuthStatusParams object
+// NewPostAuthStatusParamsWithTimeout creates a new PostAuthStatusParams object
 // with the default values initialized, and the ability to set a timeout on a request
-func NewPostIserverAuthStatusParamsWithTimeout(timeout time.Duration) *PostIserverAuthStatusParams {
+func NewPostAuthStatusParamsWithTimeout(timeout time.Duration) *PostAuthStatusParams {
 
-	return &PostIserverAuthStatusParams{
+	return &PostAuthStatusParams{
 
 		timeout: timeout,
 	}
 }
 
-// NewPostIserverAuthStatusParamsWithContext creates a new PostIserverAuthStatusParams object
+// NewPostAuthStatusParamsWithContext creates a new PostAuthStatusParams object
 // with the default values initialized, and the ability to set a context for a request
-func NewPostIserverAuthStatusParamsWithContext(ctx context.Context) *PostIserverAuthStatusParams {
+func NewPostAuthStatusParamsWithContext(ctx context.Context) *PostAuthStatusParams {
 
-	return &PostIserverAuthStatusParams{
+	return &PostAuthStatusParams{
 
 		Context: ctx,
 	}
 }
 
-// NewPostIserverAuthStatusParamsWithHTTPClient creates a new PostIserverAuthStatusParams object
+// NewPostAuthStatusParamsWithHTTPClient creates a new PostAuthStatusParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
-func NewPostIserverAuthStatusParamsWithHTTPClient(client *http.Client) *PostIserverAuthStatusParams {
+func NewPostAuthStatusParamsWithHTTPClient(client *http.Client) *PostAuthStatusParams {
 
-	return &PostIserverAuthStatusParams{
+	return &PostAuthStatusParams{
 		HTTPClient: client,
 	}
 }
 
-/*PostIserverAuthStatusParams contains all the parameters to send to the API endpoint
+/*PostAuthStatusParams contains all the parameters to send to the API endpoint
 for the post iserver auth status operation typically these are written to a http.Request
 */
-type PostIserverAuthStatusParams struct {
+type PostAuthStatusParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
 }
 
 // WithTimeout adds the timeout to the post iserver auth status params
-func (o *PostIserverAuthStatusParams) WithTimeout(timeout time.Duration) *PostIserverAuthStatusParams {
+func (o *PostAuthStatusParams) WithTimeout(timeout time.Duration) *PostAuthStatusParams {
 	o.SetTimeout(timeout)
 	return o
 }
 
 // SetTimeout adds the timeout to the post iserver auth status params
-func (o *PostIserverAuthStatusParams) SetTimeout(timeout time.Duration) {
+func (o *PostAuthStatusParams) SetTimeout(timeout time.Duration) {
 	o.timeout = timeout
 }
 
 // WithContext adds the context to the post iserver auth status params
-func (o *PostIserverAuthStatusParams) WithContext(ctx context.Context) *PostIserverAuthStatusParams {
+func (o *PostAuthStatusParams) WithContext(ctx context.Context) *PostAuthStatusParams {
 	o.SetContext(ctx)
 	return o
 }
 
 // SetContext adds the context to the post iserver auth status params
-func (o *PostIserverAuthStatusParams) SetContext(ctx context.Context) {
+func (o *PostAuthStatusParams) SetContext(ctx context.Context) {
 	o.Context = ctx
 }
 
 // WithHTTPClient adds the HTTPClient to the post iserver auth status params
-func (o *PostIserverAuthStatusParams) WithHTTPClient(client *http.Client) *PostIserverAuthStatusParams {
+func (o *PostAuthStatusParams) WithHTTPClient(client *http.Client) *PostAuthStatusParams {
 	o.SetHTTPClient(client)
 	return o
 }
 
 // SetHTTPClient adds the HTTPClient to the post iserver auth status params
-func (o *PostIserverAuthStatusParams) SetHTTPClient(client *http.Client) {
+func (o *PostAuthStatusParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
 // WriteToRequest writes these params to a swagger request
-func (o *PostIserverAuthStatusParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
+func (o *PostAuthStatusParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err

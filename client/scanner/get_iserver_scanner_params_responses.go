@@ -17,16 +17,16 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 )
 
-// GetIserverScannerParamsReader is a Reader for the GetIserverScannerParams structure.
-type GetIserverScannerParamsReader struct {
+// GetScannerParamsReader is a Reader for the GetScannerParams structure.
+type GetScannerParamsReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverScannerParamsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetScannerParamsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverScannerParamsOK()
+		result := NewGetScannerParamsOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -37,30 +37,30 @@ func (o *GetIserverScannerParamsReader) ReadResponse(response runtime.ClientResp
 	}
 }
 
-// NewGetIserverScannerParamsOK creates a GetIserverScannerParamsOK with default headers values
-func NewGetIserverScannerParamsOK() *GetIserverScannerParamsOK {
-	return &GetIserverScannerParamsOK{}
+// NewGetScannerParamsOK creates a GetScannerParamsOK with default headers values
+func NewGetScannerParamsOK() *GetScannerParamsOK {
+	return &GetScannerParamsOK{}
 }
 
-/*GetIserverScannerParamsOK handles this case with default header values.
+/*GetScannerParamsOK handles this case with default header values.
 
 An object contains lists
 */
-type GetIserverScannerParamsOK struct {
-	Payload *GetIserverScannerParamsOKBody
+type GetScannerParamsOK struct {
+	Payload *GetScannerParamsOKBody
 }
 
-func (o *GetIserverScannerParamsOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/scanner/params][%d] getIserverScannerParamsOK  %+v", 200, o.Payload)
+func (o *GetScannerParamsOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/scanner/params][%d] getScannerParamsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverScannerParamsOK) GetPayload() *GetIserverScannerParamsOKBody {
+func (o *GetScannerParamsOK) GetPayload() *GetScannerParamsOKBody {
 	return o.Payload
 }
 
-func (o *GetIserverScannerParamsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetScannerParamsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(GetIserverScannerParamsOKBody)
+	o.Payload = new(GetScannerParamsOKBody)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -111,10 +111,10 @@ func (o *FilterListItems0) UnmarshalBinary(b []byte) error {
 	return nil
 }
 
-/*GetIserverScannerParamsOKBody get iserver scanner params o k body
-swagger:model GetIserverScannerParamsOKBody
+/*GetScannerParamsOKBody get iserver scanner params o k body
+swagger:model GetScannerParamsOKBody
 */
-type GetIserverScannerParamsOKBody struct {
+type GetScannerParamsOKBody struct {
 
 	// filter list
 	FilterList []*FilterListItems0 `json:"filter_list"`
@@ -130,7 +130,7 @@ type GetIserverScannerParamsOKBody struct {
 }
 
 // Validate validates this get iserver scanner params o k body
-func (o *GetIserverScannerParamsOKBody) Validate(formats strfmt.Registry) error {
+func (o *GetScannerParamsOKBody) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := o.validateFilterList(formats); err != nil {
@@ -155,7 +155,7 @@ func (o *GetIserverScannerParamsOKBody) Validate(formats strfmt.Registry) error 
 	return nil
 }
 
-func (o *GetIserverScannerParamsOKBody) validateFilterList(formats strfmt.Registry) error {
+func (o *GetScannerParamsOKBody) validateFilterList(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.FilterList) { // not required
 		return nil
@@ -169,7 +169,7 @@ func (o *GetIserverScannerParamsOKBody) validateFilterList(formats strfmt.Regist
 		if o.FilterList[i] != nil {
 			if err := o.FilterList[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("getIserverScannerParamsOK" + "." + "filter_list" + "." + strconv.Itoa(i))
+					return ve.ValidateName("getScannerParamsOK" + "." + "filter_list" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -180,7 +180,7 @@ func (o *GetIserverScannerParamsOKBody) validateFilterList(formats strfmt.Regist
 	return nil
 }
 
-func (o *GetIserverScannerParamsOKBody) validateInstrumentList(formats strfmt.Registry) error {
+func (o *GetScannerParamsOKBody) validateInstrumentList(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.InstrumentList) { // not required
 		return nil
@@ -194,7 +194,7 @@ func (o *GetIserverScannerParamsOKBody) validateInstrumentList(formats strfmt.Re
 		if o.InstrumentList[i] != nil {
 			if err := o.InstrumentList[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("getIserverScannerParamsOK" + "." + "instrument_list" + "." + strconv.Itoa(i))
+					return ve.ValidateName("getScannerParamsOK" + "." + "instrument_list" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -205,7 +205,7 @@ func (o *GetIserverScannerParamsOKBody) validateInstrumentList(formats strfmt.Re
 	return nil
 }
 
-func (o *GetIserverScannerParamsOKBody) validateLocationTree(formats strfmt.Registry) error {
+func (o *GetScannerParamsOKBody) validateLocationTree(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.LocationTree) { // not required
 		return nil
@@ -219,7 +219,7 @@ func (o *GetIserverScannerParamsOKBody) validateLocationTree(formats strfmt.Regi
 		if o.LocationTree[i] != nil {
 			if err := o.LocationTree[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("getIserverScannerParamsOK" + "." + "location_tree" + "." + strconv.Itoa(i))
+					return ve.ValidateName("getScannerParamsOK" + "." + "location_tree" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -230,7 +230,7 @@ func (o *GetIserverScannerParamsOKBody) validateLocationTree(formats strfmt.Regi
 	return nil
 }
 
-func (o *GetIserverScannerParamsOKBody) validateScanTypeList(formats strfmt.Registry) error {
+func (o *GetScannerParamsOKBody) validateScanTypeList(formats strfmt.Registry) error {
 
 	if swag.IsZero(o.ScanTypeList) { // not required
 		return nil
@@ -244,7 +244,7 @@ func (o *GetIserverScannerParamsOKBody) validateScanTypeList(formats strfmt.Regi
 		if o.ScanTypeList[i] != nil {
 			if err := o.ScanTypeList[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("getIserverScannerParamsOK" + "." + "scan_type_list" + "." + strconv.Itoa(i))
+					return ve.ValidateName("getScannerParamsOK" + "." + "scan_type_list" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -256,7 +256,7 @@ func (o *GetIserverScannerParamsOKBody) validateScanTypeList(formats strfmt.Regi
 }
 
 // MarshalBinary interface implementation
-func (o *GetIserverScannerParamsOKBody) MarshalBinary() ([]byte, error) {
+func (o *GetScannerParamsOKBody) MarshalBinary() ([]byte, error) {
 	if o == nil {
 		return nil, nil
 	}
@@ -264,8 +264,8 @@ func (o *GetIserverScannerParamsOKBody) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (o *GetIserverScannerParamsOKBody) UnmarshalBinary(b []byte) error {
-	var res GetIserverScannerParamsOKBody
+func (o *GetScannerParamsOKBody) UnmarshalBinary(b []byte) error {
+	var res GetScannerParamsOKBody
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

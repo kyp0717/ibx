@@ -27,38 +27,38 @@ type Client struct {
 }
 
 /*
-GetIserverAccountPnlPartitioned pns l for the selected account
+GetAccountPnlPartitioned pns l for the selected account
 
 Returns an object containing PnLfor the selected account and its models (if any).
 */
-func (a *Client) GetIserverAccountPnlPartitioned(params *GetIserverAccountPnlPartitionedParams) (*GetIserverAccountPnlPartitionedOK, error) {
+func (a *Client) GetAccountPnlPartitioned(params *GetAccountPnlPartitionedParams) (*GetAccountPnlPartitionedOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetIserverAccountPnlPartitionedParams()
+		params = NewGetAccountPnlPartitionedParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "GetIserverAccountPnlPartitioned",
+		ID:                 "GetAccountPnlPartitioned",
 		Method:             "GET",
 		PathPattern:        "/iserver/account/pnl/partitioned",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetIserverAccountPnlPartitionedReader{formats: a.formats},
+		Reader:             &GetAccountPnlPartitionedReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetIserverAccountPnlPartitionedOK)
+	success, ok := result.(*GetAccountPnlPartitionedOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIserverAccountPnlPartitioned: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for GetAccountPnlPartitioned: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

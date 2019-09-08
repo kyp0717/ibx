@@ -27,38 +27,38 @@ type Client struct {
 }
 
 /*
-GetIserverAccounts brokerages accounts
+GetAccounts brokerages accounts
 
 Returns a list of accounts the user has trading access to, their respective aliases and the currently selected account. Note this endpoint must be called before modifying an order or querying open orders.
 */
-func (a *Client) GetIserverAccounts(params *GetIserverAccountsParams) (*GetIserverAccountsOK, error) {
+func (a *Client) GetAccounts(params *GetAccountsParams) (*GetAccountsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGetIserverAccountsParams()
+		params = NewGetAccountsParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "GetIserverAccounts",
+		ID:                 "GetAccounts",
 		Method:             "GET",
 		PathPattern:        "/iserver/accounts",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GetIserverAccountsReader{formats: a.formats},
+		Reader:             &GetAccountsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*GetIserverAccountsOK)
+	success, ok := result.(*GetAccountsOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GetIserverAccounts: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for GetAccounts: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -243,38 +243,38 @@ func (a *Client) GetPortfolioSubaccounts(params *GetPortfolioSubaccountsParams) 
 }
 
 /*
-PostIserverAccount updates currently selected account to the provided account
+PostAccount updates currently selected account to the provided account
 
 If an user has multiple accounts, and user wants to get orders, trades, etc. of an account other than currently selected account, then user can update the currently selected account using this API and then can fetch required information for the newly updated account.
 */
-func (a *Client) PostIserverAccount(params *PostIserverAccountParams) (*PostIserverAccountOK, error) {
+func (a *Client) PostAccount(params *PostAccountParams) (*PostAccountOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewPostIserverAccountParams()
+		params = NewPostAccountParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "PostIserverAccount",
+		ID:                 "PostAccount",
 		Method:             "POST",
 		PathPattern:        "/iserver/account",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &PostIserverAccountReader{formats: a.formats},
+		Reader:             &PostAccountReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*PostIserverAccountOK)
+	success, ok := result.(*PostAccountOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for PostIserverAccount: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for PostAccount: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

@@ -7,25 +7,22 @@ package contract
 
 import (
 	"fmt"
-	"io"
-
 	"github.com/go-openapi/runtime"
-
 	strfmt "github.com/go-openapi/strfmt"
-
 	models "ibx/models"
+	"io"
 )
 
-// GetIserverContractConidInfoReader is a Reader for the GetIserverContractConidInfo structure.
-type GetIserverContractConidInfoReader struct {
+// GetContractConidInfoReader is a Reader for the GetContractConidInfo structure.
+type GetContractConidInfoReader struct {
 	formats strfmt.Registry
 }
 
 // ReadResponse reads a server response into the received o.
-func (o *GetIserverContractConidInfoReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
+func (o *GetContractConidInfoReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
 	case 200:
-		result := NewGetIserverContractConidInfoOK()
+		result := NewGetContractConidInfoOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -36,28 +33,28 @@ func (o *GetIserverContractConidInfoReader) ReadResponse(response runtime.Client
 	}
 }
 
-// NewGetIserverContractConidInfoOK creates a GetIserverContractConidInfoOK with default headers values
-func NewGetIserverContractConidInfoOK() *GetIserverContractConidInfoOK {
-	return &GetIserverContractConidInfoOK{}
+// NewGetContractConidInfoOK creates a GetContractConidInfoOK with default headers values
+func NewGetContractConidInfoOK() *GetContractConidInfoOK {
+	return &GetContractConidInfoOK{}
 }
 
-/*GetIserverContractConidInfoOK handles this case with default header values.
+/*GetContractConidInfoOK handles this case with default header values.
 
 returns an object
 */
-type GetIserverContractConidInfoOK struct {
+type GetContractConidInfoOK struct {
 	Payload *models.Contract
 }
 
-func (o *GetIserverContractConidInfoOK) Error() string {
-	return fmt.Sprintf("[GET /iserver/contract/{conid}/info][%d] getIserverContractConidInfoOK  %+v", 200, o.Payload)
+func (o *GetContractConidInfoOK) Error() string {
+	return fmt.Sprintf("[GET /iserver/contract/{conid}/info][%d] getContractConidInfoOK  %+v", 200, o.Payload)
 }
 
-func (o *GetIserverContractConidInfoOK) GetPayload() *models.Contract {
+func (o *GetContractConidInfoOK) GetPayload() *models.Contract {
 	return o.Payload
 }
 
-func (o *GetIserverContractConidInfoOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *GetContractConidInfoOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.Contract)
 
